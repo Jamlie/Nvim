@@ -18,6 +18,18 @@ styles.style = {
 			vim = "",
 			terminal = "",
 		},
+    diagnostics = {
+      error = "",
+      warn = "",
+      info = "",
+      hint = "",
+      debug = "",
+      trace = "",
+    },
+		dap = {
+			breakpoint = "",
+			stopped = "",
+		}
 	},
 	banner = {
 		[[	 ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓  ]],

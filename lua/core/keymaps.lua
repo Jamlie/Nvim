@@ -1,69 +1,94 @@
-vim.opt.relativenumber = true
-vim.opt.clipboard = "unnamedplus"
-vim.opt.number = true
-vim.opt.smartindent = true
+local opt = vim.opt
+local o = vim.o
+local map = vim.keymap.set
+local wo = vim.wo
+local g = vim.g
+local api = vim.api
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = false
+opt.termguicolors = true
+opt.relativenumber = true
+opt.clipboard = "unnamedplus"
+opt.number = true
+opt.smartindent = true
 
-vim.opt.colorcolumn = "128"
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = false
 
-vim.opt.updatetime = 250
-vim.opt.undofile = true
+opt.colorcolumn = "128"
 
-vim.wo.wrap = true
+opt.updatetime = 250
+opt.undofile = true
 
-vim.g.mapleader = " "
+wo.wrap = true
 
-vim.o.whichwrap = vim.o.whichwrap .. "<,>,[,],l,h"
+g.mapleader = " "
+
+o.whichwrap = o.whichwrap .. "<,>,[,],l,h"
+
+o.fileencoding = "UTF-8"
 
 -- vim.g.copilot_no_tab_map = true
 -- vim.g.copilot_assume_mapped = true
 -- vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { expr = true, noremap = true })
 -- vim.api.nvim_set_keymap("i", "<C-h>", 'copilot#Previous()', { expr = true, noremap = true })
 -- vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Next()', { expr = true, noremap = true })
-vim.api.nvim_set_keymap('n', '<C-b>', '<C-b>zz', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
-vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
-vim.api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
+api.nvim_set_keymap('n', '<C-b>', '<C-b>zz', { noremap = true })
+api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true })
+api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
+api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
+api.nvim_set_keymap('n', 'N', 'Nzzzv', { noremap = true })
 
 vim.cmd([[command! -bar -bang -nargs=? Wq w<bang> | q<bang>]])
 vim.cmd([[command! -bar -bang -nargs=? Wa w<bang> | a<bang>]])
 
-vim.keymap.set(
+map(
 	"n",
 	"<leader>ie",
-	"oif err != nil {<CR>}<Esc>Olog.Fatal(err)<Esc>oreturn err"
+	"oif err != nil {<CR>}<Esc>Olog.Fatal(err)<Esc>oreturn err",
+	{ desc = "Go Error Handling" }
 )
 
-vim.keymap.set(
+map(
 	"n",
 	"<Esc>",
 	":noh<CR>",
 	{ noremap = true }
 )
 
-vim.keymap.set(
+map(
 	"n",
 	"<C-s>",
 	":w<CR>",
 	{ noremap = true }
 )
 
-vim.keymap.set(
+map(
 	"n",
 	"<C-c>",
 	":%y+<CR>",
 	{ noremap = true }
 )
 
+map(
+	"v",
+	"J",
+	":m '>+1<CR>gv=gv",
+	{ desc = "Move line down" }
+)
+
+map(
+	"v",
+	"K",
+	":m '<-2<CR>gv=gv",
+	{ desc = "Move line up" }
+)
+
 -- :ToggleTerm size=40 direction=float
 
-vim.opt.shell = "pwsh.exe -NoLogo"
-vim.opt.shellcmdflag =
+opt.shell = "pwsh.exe -NoLogo"
+opt.shellcmdflag =
 "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
 vim.cmd [[
   let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
