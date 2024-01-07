@@ -1,4 +1,4 @@
-local overrides = require("core.plugins_config.copilot")
+local overrides = require("core.config.copilot")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -33,7 +33,7 @@ local plugins = {
 		version = "*",
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = function()
-			require("core.plugins_config.bufferline").setup()
+			require("core.config.bufferline").setup()
 		end
 	},
 	{
@@ -69,9 +69,15 @@ local plugins = {
   {
     "folke/which-key.nvim",
     config = function()
-			require("core.plugins_config.which-key").setup()
+			require("core.config.which-key").setup()
     end
   },
+	{
+		'goolord/alpha-nvim',
+    config = function ()
+			require('alpha').setup(require('core.config.alpha'))
+    end
+	},
   {
 		'numToStr/Comment.nvim',
 		config = function()

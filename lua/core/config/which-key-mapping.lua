@@ -31,6 +31,7 @@ keys["<leader>f"] = {
 	a = { "<cmd>Telescope find_files<CR> hidden=true", "Find All Files" },
 	w = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
 	b = { "<cmd>Telescope buffers<CR>", "Buffers" },
+	h = { "<cmd>Telescope oldfiles<CR>", "History" },
 	g = {
 		name = "+Git",
 		b = { "<cmd>Telescope git_branches<CR>", "Git Branches" },
