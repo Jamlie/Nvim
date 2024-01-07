@@ -10,6 +10,9 @@ cmp.setup({
     ["<C-o>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+		["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+		["<C-Space>"] = cmp.mapping.complete(),
   }),
   snippet = {
     expand = function(args)
@@ -31,6 +34,5 @@ cmp.setup({
         return vim_item
       end
     })
-  }
-
+  },
 })

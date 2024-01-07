@@ -25,7 +25,6 @@ vim.o.whichwrap = vim.o.whichwrap .. "<,>,[,],l,h"
 -- vim.api.nvim_set_keymap("i", "<C-h>", 'copilot#Previous()', { expr = true, noremap = true })
 -- vim.api.nvim_set_keymap("i", "<C-k>", 'copilot#Next()', { expr = true, noremap = true })
 vim.api.nvim_set_keymap('n', '<C-b>', '<C-b>zz', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-i>', ':Telescope', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', { noremap = true })
 vim.api.nvim_set_keymap('n', 'n', 'nzzzv', { noremap = true })
@@ -61,19 +60,7 @@ vim.keymap.set(
 	{ noremap = true }
 )
 
-vim.keymap.set(
-	"n",
-	"p",
-	'p:let @+=@0<CR>:let @"=@0<CR>'
-)
-
 -- :ToggleTerm size=40 direction=float
-
--- vim.keymap.set("n", "<leader>oh", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { noremap = true })
--- vim.keymap.set("n", "<leader>oa", ":lua require('harpoon.mark').add_file()<CR>", { noremap = true })
--- vim.keymap.set("n", "<leader>oq", ":lua require('harpoon.ui').nav_prev()<CR>", { noremap = true })
--- vim.keymap.set("n", "<leader>oe", ":lua require('harpoon.ui').nav_next()<CR>", { noremap = true })
-
 
 vim.opt.shell = "pwsh.exe -NoLogo"
 vim.opt.shellcmdflag =
@@ -83,6 +70,4 @@ vim.cmd [[
   let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
   set shellquote= shellxquote=
 ]]
-
-
 

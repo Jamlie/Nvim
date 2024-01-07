@@ -11,15 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
-
 local plugins = {
-	'wbthomason/packer.nvim',
-  'navarasu/onedark.nvim',
-  'nvim-tree/nvim-tree.lua',
+	'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons',
-  'nvim-lualine/lualine.nvim',
+	'nvim-lualine/lualine.nvim',
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
   'saadparwaiz1/cmp_luasnip',
@@ -30,6 +28,34 @@ local plugins = {
 	'onsails/lspkind.nvim',
 	'nvim-telescope/telescope-ui-select.nvim',
 
+	{
+		'akinsho/bufferline.nvim',
+		version = "*",
+		dependencies = 'nvim-tree/nvim-web-devicons',
+		config = function()
+			require("core.plugins_config.bufferline").setup()
+		end
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+	},
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require('gitsigns').setup()
+		end
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {}
+	},
 	{
 		"zbirenbaum/copilot.lua",
 		event = "InsertEnter",
@@ -43,10 +69,7 @@ local plugins = {
   {
     "folke/which-key.nvim",
     config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-      require("which-key").setup {
-      }
+			require("core.plugins_config.which-key").setup()
     end
   },
   {
@@ -99,7 +122,14 @@ local plugins = {
 	{
 		'stevearc/dressing.nvim',
 		opts = {},
-	}
+	},
+	{
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 }
 
 local opts = {}

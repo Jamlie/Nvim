@@ -1,57 +1,41 @@
-local keys = {}
+local M = {}
 
-keys["<leader>f"] = {
-	mode = "n",
-	f = { "<cmd>Telescope find_files<CR>", "Find File" },
-	w = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
-	b = { "<cmd>Telescope buffers<CR>", "Buffers" },
-}
+function M.setup()
+	local wk = require("which-key")
 
-keys["<leader>g"] = {
-	mode = "n",
-	c = { "<cmd>Telescope git_commits<CR>", "Git Commits" },
-	b = { "<cmd>Telescope git_branches<CR>", "Git Branches" },
-}
+	vim.o.timeout = true
+	vim.o.timeoutlen = 300
+	wk.setup({
+		plugins = {
+			marks = true,
+			registers = true,
+			spelling = {
+				enabled = true,
+				suggestions = 20,
+			},
+		},
+		window = {
+			border = "single",
+			position = "bottom",
+			margin = { 1, 0, 1, 0 },
+			padding = { 2, 2, 2, 2 },
+		},
+		layout = {
+			height = { min = 4, max = 25 },
+			width = { min = 20, max = 50 },
+			spacing = 3,
+			align = "left",
+		},
+		ignore_missing = false,
+		hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
+		show_help = true,
+		triggers = "auto",
+		triggers_blacklist = {
+			i = { "j", "k" },
+			v = { "j", "k" },
+		},
+		triggers_whitelist = {},
+	})
+end
 
-keys["<leader>r"] = {
-	mode = "n",
-	n = {
-		function()
-			vim.lsp.buf.rename()
-		end,
-		"Rename"
-	},
-}
-
-keys["<leader>c"] = {
-	mode = "n",
-	a = {
-		function()
-			vim.lsp.buf.code_action()
-		end,
-		"Code Action"
-	}
-}
-
-keys["<leader>/"] = {
-	mode = "n",
-	function()
-		require('Comment.api').toggle.linewise.current()
-	end,
-	"Toggle Comment"
-}
-
-keys["g"] = {
-	mode = "n",
-	d = { vim.lsp.buf.definition, "Definition" },
-	i = { vim.lsp.buf.implementation, "Implementation" },
-	r = { require("telescope.builtin").lsp_references, "References" },
-}
-
-vim.keymap.set(
-	"v",
-	"<leader>/",
-	":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
-)
-
-return keys
+return M

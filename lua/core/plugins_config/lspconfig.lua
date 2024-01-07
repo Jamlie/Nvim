@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
 
 local on_attach = function(_, _)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+	vim.keymap.set("n", "L", vim.lsp.diagnostic.set_loclist, { silent = true })
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
