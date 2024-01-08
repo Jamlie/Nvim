@@ -190,6 +190,16 @@ local plugins = {
 		end,
 	},
 
+	-- formatter
+	{
+		"nvimtools/none-ls.nvim",
+		ft = "go",
+		event = "VeryLazy",
+		opts = function()
+			return require("core.config.none-ls")
+		end
+	},
+
 	-- {
 	-- 	"folke/noice.nvim",
 	-- 	event = "VeryLazy",

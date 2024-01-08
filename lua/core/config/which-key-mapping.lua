@@ -1,30 +1,6 @@
-local keys = {}
+local M = {}
 
-keys["<C-h>"] = {
-	mode = "n",
-	"<C-w>h",
-	"Switch to the buffer to the left",
-}
-
-keys["<C-l>"] = {
-	mode = "n",
-	"<C-w>l",
-	"Switch to the buffer to the right",
-}
-
-keys["<C-k>"] = {
-	mode = "n",
-	"<C-w>k",
-	"Switch to the buffer to the top",
-}
-
-keys["<C-j>"] = {
-	mode = "n",
-	"<C-w>j",
-	"Switch to the buffer to the bottom",
-}
-
-keys["<leader>f"] = {
+M["<leader>f"] = {
 	name = "+Telescope",
 	mode = "n",
 	f = { "<cmd>Telescope find_files<CR>", "Find File" },
@@ -40,7 +16,7 @@ keys["<leader>f"] = {
 	},
 }
 
-keys["<leader>r"] = {
+M["<leader>r"] = {
 	mode = "n",
 	n = {
 		function()
@@ -50,7 +26,7 @@ keys["<leader>r"] = {
 	},
 }
 
-keys["<leader>c"] = {
+M["<leader>c"] = {
 	name = "LSP",
 	mode = "n",
 	a = {
@@ -62,7 +38,7 @@ keys["<leader>c"] = {
 	d = { "<cmd>Trouble<CR>", "Trouble" },
 }
 
-keys["<leader>/"] = {
+M["<leader>/"] = {
 	mode = "n",
 	function()
 		require('Comment.api').toggle.linewise.current()
@@ -70,33 +46,33 @@ keys["<leader>/"] = {
 	"Toggle Comment"
 }
 
-keys["g"] = {
+M["g"] = {
 	mode = "n",
 	d = { vim.lsp.buf.definition, "Definition" },
 	i = { vim.lsp.buf.implementation, "Implementation" },
 	r = { require("telescope.builtin").lsp_references, "References" },
 }
 
-keys["<Tab>"] = {
+M["<Tab>"] = {
 	mode = "n",
 	"<cmd>BufferLineCycleNext<CR>",
 	"Next Buffer",
 }
 
-keys["<S-Tab>"] = {
+M["<S-Tab>"] = {
 	mode = "n",
 	"<cmd>BufferLineCyclePrev<CR>",
 	"Previous Buffer",
 }
 
-keys["<leader>X"] = {
+M["<leader>X"] = {
 	mode = "n",
 	"<cmd>BufferLineCloseOthers<CR>",
 	"Close Other Buffers"
 }
 
 -- close current buffer
-keys["<leader>x"] = {
+M["<leader>x"] = {
 	mode = "n",
 	function()
 		vim.cmd("bd")
@@ -104,14 +80,14 @@ keys["<leader>x"] = {
 	"Close Buffer",
 }
 
-keys["<leader>p"] = {
+M["<leader>p"] = {
 	mode = "n",
 	"<cmd>BufferLinePick<CR>",
 	"Pick Buffer",
 }
 
 
-keys["<leader>o"] = {
+M["<leader>o"] = {
 	name = "Harpoon",
 	mode = "n",
 	h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle Harpoon's Menu" },
@@ -120,17 +96,42 @@ keys["<leader>o"] = {
 	e = { "<cmd>lua require('harpoon.ui').nav_next()<CR>", "Next Harpoon Window" },
 }
 
-keys["p"] = {
+M["p"] = {
 	mode = "x",
 	'p:let @+=@0<CR>:let @"=@0<CR>',
 	"Don't copy over visual selection after paste",
 	opts = { silent = true },
 }
 
+M["<C-h>"] = {
+	mode = "n",
+	"<C-w>h",
+	"Switch to the buffer to the left",
+}
+
+M["<C-l>"] = {
+	mode = "n",
+	"<C-w>l",
+	"Switch to the buffer to the right",
+}
+
+M["<C-k>"] = {
+	mode = "n",
+	"<C-w>k",
+	"Switch to the buffer to the top",
+}
+
+M["<C-j>"] = {
+	mode = "n",
+	"<C-w>j",
+	"Switch to the buffer to the bottom",
+}
+
 vim.keymap.set(
 	"v",
 	"<leader>/",
-	":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>"
+	":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+	{ desc = "Toggle Comment" }
 )
 
-return keys
+return M
