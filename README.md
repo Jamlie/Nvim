@@ -35,6 +35,8 @@ A personal neovim configuration for `Go` and `JS`
 
 ### Linux/macOS (Unix)
 
+---
+
 Make a backup of your current nvim and shared folder
 
 ```sh
@@ -50,6 +52,8 @@ nvim
 ```
 
 ### Windows (Powershell)
+
+---
 
 ```powershell
 mv $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
