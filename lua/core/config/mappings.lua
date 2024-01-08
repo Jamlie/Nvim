@@ -94,6 +94,12 @@ map(
 	{ desc = "Move line up" }
 )
 
+M["<leader>g"] = {
+	name = "+Git",
+	mode = "n",
+	s = { "<cmd>LazyGit<CR>", "Open LazyGit" },
+}
+
 M["<leader>f"] = {
 	name = "+Telescope",
 	mode = "n",
@@ -110,16 +116,6 @@ M["<leader>f"] = {
 	},
 }
 
-M["<leader>r"] = {
-	mode = "n",
-	n = {
-		function()
-			vim.lsp.buf.rename()
-		end,
-		"Rename"
-	},
-}
-
 M["<leader>c"] = {
 	name = "LSP",
 	mode = "n",
@@ -132,12 +128,20 @@ M["<leader>c"] = {
 	t = { "<cmd>Trouble<CR>", "Trouble" },
 	f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
 	d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostic" },
+	r = {
+		function()
+			vim.lsp.buf.rename()
+		end,
+		"Rename"
+	},
 }
 
 M["g"] = {
 	mode = "n",
 	d = { vim.lsp.buf.definition, "Definition" },
+	D = { vim.lsp.buf.declaration, "Declaration" },
 	i = { vim.lsp.buf.implementation, "Implementation" },
+	t = { vim.lsp.buf.type_definition, "Type Definition" },
 	r = { require("telescope.builtin").lsp_references, "References" },
 }
 
@@ -153,26 +157,26 @@ M["<S-Tab>"] = {
 	"Previous Buffer",
 }
 
-M["<leader>X"] = {
+M["<leader>b"] = {
+	name = "BufferLine"
 	mode = "n",
-	"<cmd>BufferLineCloseOthers<CR>",
-	"Close Other Buffers"
-}
+  X = {
+		"<cmd>BufferLineCloseOthers<CR>",
+		"Close Other Buffers"
+	},
+	x = {
+		mode = "n",
+		function()
+			vim.cmd("bd")
+		end,
+		"Close Buffer",
+	},
 
--- close current buffer
-M["<leader>x"] = {
-	mode = "n",
-	function()
-		vim.cmd("bd")
-	end,
-	"Close Buffer",
-}
-
--- pick buffer
-M["<leader>p"] = {
-	mode = "n",
-	"<cmd>BufferLinePick<CR>",
-	"Pick Buffer",
+	p = {
+		mode = "n",
+		"<cmd>BufferLinePick<CR>",
+		"Pick Buffer",
+	},
 }
 
 -- harpoon

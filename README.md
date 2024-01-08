@@ -66,3 +66,86 @@ Clone the repository
 git clone https://github.com/Jamlie/nvim.git $env:LOCALAPPDATA\nvim
 nvim
 ```
+
+## Keybindings
+
+### General
+
+|    Key     |                     Description                      | Mode |
+| :--------: | :--------------------------------------------------: | :--: |
+|   <C-b>    |       Scroll up a page (Cursor in the middle)        |  n   |
+|   <C-u>    |     Scroll up half a page (Cursor in the middle)     |  n   |
+|   <C-d>    |    Scroll down half a page (Cursor in the middle)    |  n   |
+|   <C-h>    |           Switch to the buffer to the left           |  n   |
+|   <C-l>    |          Switch to the buffer to the right           |  n   |
+|   <C-k>    |           Switch to the buffer to the top            |  n   |
+|   <C-j>    |          Switch to the buffer to the bottom          |  n   |
+|     n      | Search for the next same word (Cursor in the middle) |  n   |
+|     N      | Search for the prev same word (Cursor in the middle) |  n   |
+|     J      |                  Move the line down                  |  v   |
+|     K      |                   Move the line up                   |  v   |
+|     p      |     Don't copy over visual selection after paste     |  n   |
+| <leader>s  |                         Save                         |  n   |
+| <leader>c  |                    Copy the file                     |  n   |
+| <leader>\  |               Toggle floating terminal               |  n   |
+| <leader>/  |                    Toggle comment                    | n, v |
+| <leader>ie |                  Go Error Handling                   |  n   |
+
+### LSP
+
+|    Key     |     Description     | Mode |
+| :--------: | :-----------------: | :--: |
+|     gd     |  Go to definition   |  n   |
+|     gD     |  Go to declaration  |  n   |
+|     gr     |  Go to references   |  n   |
+|     gi     | Go to implemetation |  n   |
+|     K      |        Hover        |  n   |
+| <leader>ca |     Code action     |  n   |
+| <leader>cg |       Format        |  n   |
+| <leader>cd |     Diagnostics     |  n   |
+| <leader>cr |       Rename        |  n   |
+| <leader>ct |       Trouble       |  n   |
+
+### NvimTree
+
+|  Key  | Description | Mode |
+| :---: | :---------: | :--: |
+| <C-n> | Toggle tree |  n   |
+
+### LazyGit
+
+|    Key     |  Description  | Mode |
+| :--------: | :-----------: | :--: |
+| <leader>gs | Start lazygit |  n   |
+
+### Telescope
+
+|     Key     |  Description   | Mode |
+| :---------: | :------------: | :--: |
+| <leader>fa  | Find all files |  n   |
+| <leader>ff  |   Find files   |  n   |
+| <leader>fw  |   Find word    |  n   |
+| <leader>fb  |    Buffers     |  n   |
+| <leader>fh  |   Old files    |  n   |
+| <leader>fgb |  Git branches  |  n   |
+| <leader>fgc |  Git commits   |  n   |
+| <leader>fgs |   Git status   |  n   |
+
+### Bufferline
+
+|    Key     |     Description     | Mode |
+| :--------: | :-----------------: | :--: |
+|   <Tab>    |     Next buffer     |  n   |
+|  <S-Tab>   |     Next buffer     |  n   |
+| <leader>bp |     Pick buffer     |  n   |
+| <leader>bx |    Close buffer     |  n   |
+| <leader>bX | Close other buffers |  n   |
+
+### Harpoon
+
+|    Key     |       Description       | Mode |
+| :--------: | :---------------------: | :--: |
+| <leader>oh |   Toggle harpoon menu   |  n   |
+| <leader>oa |   Add file to harpoon   |  n   |
+| <leader>oq | Previous harpoon window |  n   |
+| <leader>oe |   Next harpoon window   |  n   |
