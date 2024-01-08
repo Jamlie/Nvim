@@ -36,3 +36,11 @@ lspconfig.pyright.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
+
+lspconfig.templ.setup({
+	on_attach = on_attach,
+	flags = {
+		debounce_text_changes = 150,
+	},
+	filetypes = { "templ" },
+})

@@ -29,6 +29,10 @@ styles.style = {
 		dap = {
 			breakpoint = "",
 			stopped = "",
+		},
+		separators = {
+			half_circle_left = "",
+			half_circle_right = "",
 		}
 	},
 	banner = {

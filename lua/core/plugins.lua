@@ -1,18 +1,4 @@
-local overrides = require("core.config.copilot")
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
-end
-
-vim.opt.rtp:prepend(lazypath)
+local overrides = require("core.config.ai.copilot")
 
 local plugins = {
 	-- file-tree
@@ -27,15 +13,19 @@ local plugins = {
 	'nvim-lua/plenary.nvim',
 
 	-- syntax highlighting
-  "nvim-treesitter/nvim-treesitter",
-
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+		end,
+	},
 	-- bufferline
 	{
 		'akinsho/bufferline.nvim',
 		version = "*",
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = function()
-			require("core.config.bufferline").setup()
+			require("core.config.ui.bufferline").setup()
 		end
 	},
 
@@ -70,7 +60,7 @@ local plugins = {
   {
     "folke/which-key.nvim",
     config = function()
-			require("core.config.which-key").setup()
+			require("core.config.essentials.which-key").setup()
     end
   },
 
@@ -78,7 +68,7 @@ local plugins = {
 	{
 		'goolord/alpha-nvim',
     config = function ()
-			require("core.config.alpha").setup()
+			require("core.config.ui.alpha").setup()
     end
 	},
 
@@ -196,58 +186,106 @@ local plugins = {
 		ft = "go",
 		event = "VeryLazy",
 		opts = function()
-			return require("core.config.none-ls")
-		end
+			return require("core.config.essentials.none-ls")
+		end,
 	},
 
-	-- {
-	-- 	"folke/noice.nvim",
-	-- 	event = "VeryLazy",
-	--
-	-- 	dependencies = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		{
-	-- 			"rcarriga/nvim-notify",
-	-- 			config = function()
-	-- 				require("core.config.notify").setup()
-	-- 			end,
-	-- 		},
-	-- 	},
-	--
-	-- 	config = function()
-	-- 		require("noice").setup({
-	-- 			cmdline = {
-	-- 				view = "cmdline",
-	-- 				format = {
-	-- 					search_down = {
-	-- 						view = "cmdline",
-	-- 					},
-	-- 					search_up = {
-	-- 						view = "cmdline",
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 			lsp = {
-	-- 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-	-- 				override = {
-	-- 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-	-- 					["vim.lsp.util.stylize_markdown"] = true,
-	-- 					["cmp.entry.get_documentation"] = true,
-	-- 				},
-	-- 			},
-	-- 			-- you can enable a preset for easier configuration
-	-- 			presets = {
-	-- 				bottom_search = true, -- use a classic bottom cmdline for search
-	-- 				command_palette = true, -- position the cmdline and popupmenu together
-	-- 				long_message_to_split = true, -- long messages will be sent to a split
-	-- 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
-	-- 				lsp_doc_border = false, -- add a border to hover docs and signature help
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
+	{
+		"aznhe21/actions-preview.nvim",
+		config = function()
+			vim.keymap.set({ "v", "n" }, "<leader>cs", require("actions-preview").code_actions)
+		end,
+	},
+
+	{
+		"vrischmann/tree-sitter-templ",
+		event = "BufRead",
+		config = function()
+			require("core.config.essentials.treesitter")
+		end,
+	},
+
+
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			{
+				"rcarriga/nvim-notify",
+				config = function()
+					require("core.config.ui.notify").setup()
+				end,
+			},
+		},
+
+		config = function()
+			require("noice").setup({
+				views = {
+					cmdline_popup = {
+						position = {
+							row = 5,
+							col = "50%",
+						},
+						size = {
+							width = 60,
+							height = "auto",
+						},
+					},
+					popupmenu = {
+						relative = "editor",
+						position = {
+							row = 8,
+							col = "50%",
+						},
+						size = {
+							width = 60,
+							height = 10,
+						},
+						border = {
+							style = "rounded",
+							padding = { 0, 1 },
+						},
+						win_options = {
+							winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+						},
+					},
+				},
+			})
+			-- require("noice").setup({
+			-- 	cmdline = {
+			-- 		view = "cmdline",
+			-- 		format = {
+			-- 			search_down = {
+			-- 				view = "cmdline",
+			-- 			},
+			-- 			search_up = {
+			-- 				view = "cmdline",
+			-- 			},
+			-- 		},
+			-- 	},
+			-- 	lsp = {
+			-- 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+			-- 		override = {
+			-- 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+			-- 			["vim.lsp.util.stylize_markdown"] = true,
+			-- 			["cmp.entry.get_documentation"] = true,
+			-- 		},
+			-- 	},
+			-- 	-- you can enable a preset for easier configuration
+			-- 	presets = {
+			-- 		bottom_search = true, -- use a classic bottom cmdline for search
+			-- 		command_palette = true, -- position the cmdline and popupmenu together
+			-- 		long_message_to_split = true, -- long messages will be sent to a split
+			-- 		inc_rename = false, -- enables an input dialog for inc-rename.nvim
+			-- 		lsp_doc_border = false, -- add a border to hover docs and signature help
+			-- 	},
+			-- })
+		end,
+	},
 }
 
 local opts = {}
 
-require("lazy").setup(plugins, opts)
+return plugins, opts

@@ -9,6 +9,7 @@ function M.setup()
 		timeout = 3200,
 		stages = "fade",
 		top_down = false,
+		background_colour = "#000000",
     icons = {
       ERROR = icons.diagnostics.error,
       WARN = icons.diagnostics.warn,

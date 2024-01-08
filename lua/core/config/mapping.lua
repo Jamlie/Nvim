@@ -1,4 +1,98 @@
 local M = {}
+local map = vim.keymap.set
+
+M["<C-b>"] = {
+	name = "Scrolling",
+	mode = "n",
+	"<C-b>zz",
+	"Scroll Up",
+	{ noremap = true },
+}
+
+M["<C-u>"] = {
+	name = "Scrolling",
+	mode = "n",
+	"<C-u>zz",
+	"Scroll Up",
+	{ noremap = true },
+}
+
+M["<C-d>"] = {
+	name = "Scrolling",
+	mode = "n",
+	"<C-d>zz",
+	"Scroll Down",
+	{ noremap = true },
+}
+
+M["<C-n>"] = {
+	name = "NvimTree",
+	mode = "n",
+	"<cmd>NvimTreeFindFileToggle<CR>",
+	"Toggle NvimTree",
+	{ noremap = true },
+}
+
+M["n"] = {
+	name = "Search",
+	mode = "n",
+	"nzzzv",
+	"Next",
+	{ noremap = true },
+}
+
+M["N"] = {
+	name = "Search",
+	mode = "n",
+	"Nzzzv",
+	"Previous",
+	{ noremap = true },
+}
+
+vim.cmd([[command! -bar -bang -nargs=? Wq w<bang> | q<bang>]])
+vim.cmd([[command! -bar -bang -nargs=? Wa w<bang> | a<bang>]])
+
+M["<leader>ie"] = {
+	name = "Error Handling",
+	mode = "n",
+	"oif err != nil {<CR>}<Esc>O\tlog.Fatal(err)<Esc>oreturn err",
+	"Golang Error Handling",
+}
+
+M["<Esc>"] = {
+	name = "Escape",
+	mode = "n",
+	"<cmd>noh<CR>",
+	"Clear Highlight",
+}
+
+M["<C-s>"] = {
+	name = "Save",
+	mode = "n",
+	"<cmd>w<CR>",
+	"Save",
+}
+
+M["<C-c>"] = {
+	name = "Copy",
+	mode = "n",
+	":%y+<CR>",
+	"Copy to Clipboard",
+}
+
+map(
+	"v",
+	"J",
+	":m '>+1<CR>gv=gv",
+	{ desc = "Move line down" }
+)
+
+map(
+	"v",
+	"K",
+	":m '<-2<CR>gv=gv",
+	{ desc = "Move line up" }
+)
 
 M["<leader>f"] = {
 	name = "+Telescope",
@@ -38,14 +132,6 @@ M["<leader>c"] = {
 	d = { "<cmd>Trouble<CR>", "Trouble" },
 }
 
-M["<leader>/"] = {
-	mode = "n",
-	function()
-		require('Comment.api').toggle.linewise.current()
-	end,
-	"Toggle Comment"
-}
-
 M["g"] = {
 	mode = "n",
 	d = { vim.lsp.buf.definition, "Definition" },
@@ -80,13 +166,14 @@ M["<leader>x"] = {
 	"Close Buffer",
 }
 
+-- pick buffer
 M["<leader>p"] = {
 	mode = "n",
 	"<cmd>BufferLinePick<CR>",
 	"Pick Buffer",
 }
 
-
+-- harpoon
 M["<leader>o"] = {
 	name = "Harpoon",
 	mode = "n",
@@ -96,6 +183,7 @@ M["<leader>o"] = {
 	e = { "<cmd>lua require('harpoon.ui').nav_next()<CR>", "Next Harpoon Window" },
 }
 
+-- paste without overwriting the current selection
 M["p"] = {
 	mode = "x",
 	'p:let @+=@0<CR>:let @"=@0<CR>',
@@ -125,6 +213,14 @@ M["<C-j>"] = {
 	mode = "n",
 	"<C-w>j",
 	"Switch to the buffer to the bottom",
+}
+
+M["<leader>/"] = {
+	mode = "n",
+	function()
+		require('Comment.api').toggle.linewise.current()
+	end,
+	"Toggle Comment"
 }
 
 vim.keymap.set(

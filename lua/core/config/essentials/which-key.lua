@@ -36,6 +36,9 @@ function M.setup()
 		},
 		triggers_whitelist = {},
 	})
+
+	local keys = require("core.config.mapping")
+	wk.register(keys)
 end
 
 return M

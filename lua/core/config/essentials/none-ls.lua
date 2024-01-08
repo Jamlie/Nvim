@@ -26,7 +26,7 @@ local opts = {
 		null_ls.builtins.formatting.golines,
 
 		-- node
-		-- null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.prettierd,
 	},
 	on_attach = on_attach,
 }
