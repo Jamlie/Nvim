@@ -1,9 +1,7 @@
 local opt = vim.opt
 local o = vim.o
-local map = vim.keymap.set
 local wo = vim.wo
 local g = vim.g
-local api = vim.api
 
 opt.termguicolors = true
 opt.relativenumber = true

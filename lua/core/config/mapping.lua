@@ -129,7 +129,9 @@ M["<leader>c"] = {
 		end,
 		"Code Action"
 	},
-	d = { "<cmd>Trouble<CR>", "Trouble" },
+	t = { "<cmd>Trouble<CR>", "Trouble" },
+	f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
+	d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostic" },
 }
 
 M["g"] = {
