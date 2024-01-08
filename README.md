@@ -114,9 +114,9 @@ nvim
 
 ### LazyGit
 
-|    Key     |  Description  | Mode |
-| :--------: | :-----------: | :--: |
-| <leader>gs | Start lazygit |  n   |
+|     Key     |  Description  | Mode |
+| :---------: | :-----------: | :--: |
+| \<leader>gs | Start lazygit |  n   |
 
 ### Telescope
 
