@@ -65,6 +65,13 @@ local plugins = {
   },
 
 	-- dashboard
+	-- {
+	-- 	"startup-nvim/startup.nvim",
+	-- 	dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+	-- 	config = function()
+	-- 		require("startup").setup()
+	-- 	end
+	-- },
 	{
 		'goolord/alpha-nvim',
     config = function ()
@@ -85,7 +92,7 @@ local plugins = {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
-    dependencies = { {"nvim-lua/plenary.nvim"} }
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
 	-- autopairs () {} [] '' "" ``
@@ -292,6 +299,13 @@ local plugins = {
 		end,
 	},
 }
+
+local custom = require("custom.override")
+if custom.plugins then
+	for _, plugin in ipairs(custom.plugins) do
+		table.insert(plugins, plugin)
+	end
+end
 
 local opts = {}
 

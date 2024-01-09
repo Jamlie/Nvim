@@ -195,6 +195,18 @@ M["g"] = {
 	r = { require("telescope.builtin").lsp_references, "References" },
 }
 
+M["<leader>t"] = {
+	mode = "n",
+	h = {
+		function()
+			require("telescope.builtin").colorscheme({
+				prompt_title = "Change Theme",
+			})
+		end,
+		"Themes",
+	},
+}
+
 M["<Tab>"] = {
 	mode = "n",
 	"<cmd>BufferLineCycleNext<CR>",
@@ -286,5 +298,12 @@ vim.keymap.set(
 	":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
 	{ desc = "Toggle Comment", noremap = true }
 )
+
+local custom = require("custom.override")
+if custom.mappings then
+	for key, mapping in pairs(custom.mappings) do
+		M[key] = mapping
+	end
+end
 
 return M

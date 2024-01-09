@@ -6,6 +6,15 @@ require("catppuccin").setup({
         light = "latte",
         dark = "mocha",
     },
+		-- color_overrides = {
+		-- 	macchiato = {
+  --       red = "#F7768E",
+  --       blue = "#7AA2F7",
+  --       green = "#7BED9F",
+		-- 		yellow = "#E0AF68",
+  --       mauve = "#D488FF",
+		-- 	},
+		-- },
     transparent_background = true,
     show_end_of_buffer = false,
     term_colors = false,
@@ -31,7 +40,7 @@ require("catppuccin").setup({
         types = {},
         operators = {},
     },
-    color_overrides = {},
+    -- color_overrides = {},
     custom_highlights = {},
     integrations = {
         cmp = true,
@@ -46,4 +55,3 @@ require("catppuccin").setup({
     },
 })
 
-vim.cmd.colorscheme "catppuccin"
