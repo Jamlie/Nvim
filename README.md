@@ -28,6 +28,7 @@ A personal neovim configuration for `Go`, `Rust`, `JS`
 6. [goimports-reviser](https://github.com/incu6us/goimports-reviser)
 7. [prettierd](https://github.com/MunifTanjim/prettier.nvim)
 8. [rustfmt](https://github.com/rust-lang/rustfmtt)
+9. [Delve](https://github.com/go-delve/delve)
 
 ## Font
 
