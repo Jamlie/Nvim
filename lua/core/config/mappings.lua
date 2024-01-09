@@ -15,25 +15,39 @@ M["<leader>d"] = {
 		"<cmd>DapToggleBreakpoint<CR>",
 		"Toggle Breakpoint",
 	},
-	us = {
-		function()
-			local widgets = require("dap.ui.widgets")
-			local sidebar = widgets.sidebar(widgets.scopes)
-			sidebar.open()
-		end,
-		"Show Scopes",
+	t = {
+		"<cmd>DapTerminate<CR>",
+		"Terminate",
 	},
-	gt = {
-		function()
-			require("dap-go").debug_test()
-		end,
-		"Debug Test",
+	u = {
+		name = "UI",
+		s = {
+			function()
+				local widgets = require("dap.ui.widgets")
+				local sidebar = widgets.sidebar(widgets.scopes)
+				sidebar.open()
+			end,
+			"Show Scopes",
+		},
 	},
-	gl = {
-		function()
-			require("dap-go").debug_last()
-		end,
-		"Debug Last",
+	c = {
+		"<cmd>DapContinue<CR>",
+		"Continue",
+	},
+	s = {
+		name = "Step",
+		i = {
+			"<cmd>DapStepInto<CR>",
+			"Into",
+		},
+		u = {
+			"<cmd>DapStepOut<CR>",
+			"Out",
+		},
+		o = {
+			"<cmd>DapStepOver<CR>",
+			"Over",
+		},
 	},
 }
 

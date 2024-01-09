@@ -2,11 +2,11 @@
 
 A personal neovim configuration for `Go` and `JS`
 
-| Language | LSP           | Formatter                           | Debuggers |
-| -------- | ------------- | ----------------------------------- | --------- |
-| Go       | gopls         | gofumpt, goimports_reviser, golines | ...       |
-| JS/TS    | tsserver      | prettierd                           | ...       |
-| Rust     | rust_analyzer | rustfmt                             | codelldb  |
+| Language | LSP           | Formatter                           | Debuggers               |
+| -------- | ------------- | ----------------------------------- | ----------------------- |
+| Go       | gopls         | gofumpt, goimports_reviser, golines | delve (use dlv command) |
+| JS/TS    | tsserver      | prettierd                           | ...                     |
+| Rust     | rust_analyzer | rustfmt                             | codelldb                |
 
 ## Preview
 
@@ -151,3 +151,15 @@ nvim
 | \<leader>oa |   Add file to harpoon   |  n   |
 | \<leader>oq | Previous harpoon window |  n   |
 | \<leader>oe |   Next harpoon window   |  n   |
+
+### Dap
+
+|     Key      |    Description    | Mode |
+| :----------: | :---------------: | :--: |
+| \<leader>db  | Toggle breakpoint |  n   |
+| \<leader>dc  |     Continue      |  n   |
+| \<leader>dt  |   Dap Terminate   |  n   |
+| \<leader>dus |    Show scopes    |  n   |
+| \<leader>dsi |   Dap step into   |  n   |
+| \<leader>dsu |   Dap step out    |  n   |
+| \<leader>dso |   Dap step over   |  n   |
