@@ -27,7 +27,10 @@ local opts = {
 
 		-- node
 		null_ls.builtins.formatting.prettierd,
-	},
+
+		-- rust
+		null_ls.builtins.formatting.rustfmt,
+},
 	on_attach = on_attach,
 }
 

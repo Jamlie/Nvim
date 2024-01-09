@@ -2,10 +2,11 @@
 
 A personal neovim configuration for `Go` and `JS`
 
-| Language | LSP      | Formatter                           |
-| -------- | -------- | ----------------------------------- |
-| Go       | gopls    | gofumpt, goimports_reviser, golines |
-| JS/TS    | tsserver | prettierd                           |
+| Language | LSP           | Formatter                           | Debuggers |
+| -------- | ------------- | ----------------------------------- | --------- |
+| Go       | gopls         | gofumpt, goimports_reviser, golines | ...       |
+| JS/TS    | tsserver      | prettierd                           | ...       |
+| Rust     | rust_analyzer | rustfmt                             | codelldb  |
 
 ## Preview
 
@@ -19,13 +20,14 @@ A personal neovim configuration for `Go` and `JS`
 
 ## Dependencies
 
-1. fzf
-2. ripgrep
-3. lazygit
-4. gofumpt
-5. golines
-6. goimports-reviser
-7. prettierd
+1. [fzf](https://github.com/junegunn/fzf)
+2. [ripgrep](https://github.com/BurntSushi/ripgrep)
+3. [lazygit](https://github.com/jesseduffield/lazygit)
+4. [gofumpt](https://github.com/mvdan/gofumpt)
+5. [golines](https://github.com/segmentio/golines)
+6. [goimports-reviser](https://github.com/incu6us/goimports-reviser)
+7. [prettierd](https://github.com/MunifTanjim/prettier.nvim)
+8. [rustfmt](https://github.com/rust-lang/rustfmtt)
 
 ## Font
 
@@ -100,11 +102,12 @@ nvim
 |     gr      |  Go to references   |  n   |
 |     gi      | Go to implemetation |  n   |
 |      K      |        Hover        |  n   |
-| \<leader>ca |     Code action     |  n   |
+| \<leader>ca |    Code actions     |  n   |
 | \<leader>cg |       Format        |  n   |
 | \<leader>cd |     Diagnostics     |  n   |
 | \<leader>cr |       Rename        |  n   |
 | \<leader>ct |       Trouble       |  n   |
+| \<leader>k  |  Rust code actions  |  n   |
 
 ### NvimTree
 

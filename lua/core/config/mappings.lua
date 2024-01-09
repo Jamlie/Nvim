@@ -1,6 +1,42 @@
 local M = {}
 local map = vim.keymap.set
 
+M["<leader>k"] = {
+	name = "RustLSP",
+	mode = "n",
+	"<cmd>RustLsp hover actions<CR>",
+	"Rust Hover Actions",
+}
+
+M["<leader>d"] = {
+	name = "Debug",
+	mode = "n",
+	b = {
+		"<cmd>DapToggleBreakpoint<CR>",
+		"Toggle Breakpoint",
+	},
+	us = {
+		function()
+			local widgets = require("dap.ui.widgets")
+			local sidebar = widgets.sidebar(widgets.scopes)
+			sidebar.open()
+		end,
+		"Show Scopes",
+	},
+	gt = {
+		function()
+			require("dap-go").debug_test()
+		end,
+		"Debug Test",
+	},
+	gl = {
+		function()
+			require("dap-go").debug_last()
+		end,
+		"Debug Last",
+	},
+}
+
 M["<C-b>"] = {
 	name = "Scrolling",
 	mode = "n",
@@ -157,26 +193,27 @@ M["<S-Tab>"] = {
 	"Previous Buffer",
 }
 
-M["<leader>b"] = {
-	name = "BufferLine"
+M["<leader>x"] = {
+	name = "Close Buffer",
 	mode = "n",
-  X = {
-		"<cmd>BufferLineCloseOthers<CR>",
-		"Close Other Buffers"
-	},
-	x = {
-		mode = "n",
-		function()
-			vim.cmd("bd")
-		end,
-		"Close Buffer",
-	},
+	function()
+		vim.cmd("bd")
+	end,
+	"Close Buffer",
+}
 
-	p = {
-		mode = "n",
-		"<cmd>BufferLinePick<CR>",
-		"Pick Buffer",
-	},
+M["<leader>X"] = {
+	name = "Close Buffer",
+	mode = "n",
+	"<cmd>BufferLineCloseOthers<CR>",
+	"Close Other Buffers"
+}
+
+M["<leader>p"] = {
+	name = "Pick Buffer",
+	mode = "n",
+	"<cmd>BufferLinePick<CR>",
+	"Pick Buffer",
 }
 
 -- harpoon

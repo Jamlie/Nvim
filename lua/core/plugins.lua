@@ -221,69 +221,88 @@ local plugins = {
 		},
 
 		config = function()
-			require("noice").setup({
-				views = {
-					cmdline_popup = {
-						position = {
-							row = 5,
-							col = "50%",
-						},
-						size = {
-							width = 60,
-							height = "auto",
-						},
-					},
-					popupmenu = {
-						relative = "editor",
-						position = {
-							row = 8,
-							col = "50%",
-						},
-						size = {
-							width = 60,
-							height = 10,
-						},
-						border = {
-							style = "rounded",
-							padding = { 0, 1 },
-						},
-						win_options = {
-							winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-						},
-					},
-				},
-			})
-			-- require("noice").setup({
-			-- 	cmdline = {
-			-- 		view = "cmdline",
-			-- 		format = {
-			-- 			search_down = {
-			-- 				view = "cmdline",
-			-- 			},
-			-- 			search_up = {
-			-- 				view = "cmdline",
-			-- 			},
-			-- 		},
-			-- 	},
-			-- 	lsp = {
-			-- 		-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-			-- 		override = {
-			-- 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-			-- 			["vim.lsp.util.stylize_markdown"] = true,
-			-- 			["cmp.entry.get_documentation"] = true,
-			-- 		},
-			-- 	},
-			-- 	-- you can enable a preset for easier configuration
-			-- 	presets = {
-			-- 		bottom_search = true, -- use a classic bottom cmdline for search
-			-- 		command_palette = true, -- position the cmdline and popupmenu together
-			-- 		long_message_to_split = true, -- long messages will be sent to a split
-			-- 		inc_rename = false, -- enables an input dialog for inc-rename.nvim
-			-- 		lsp_doc_border = false, -- add a border to hover docs and signature help
-			-- 	},
-			-- })
+			require("core.config.ui.noice").setup()
 		end,
 	},
+
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^3',
+		ft = { 'rust' },
+	},
+
+	{
+		"mfussenegger/nvim-dap",
+	},
+
+	{
+		"rcarriga/nvim-dap-ui",
+		deps = {
+			"mfussenegger/nvim-dap",
+		},
+		config = function()
+			require("dapui").setup()
+			local dap = require("dap")
+			dap.listeners.after.event_initialized["dapui_config"] = function()
+				require("dapui").open()
+			end
+			dap.listeners.before.event_terminated["dapui_config"] = function()
+				require("dapui").close()
+			end
+			dap.listeners.before.event_exited["dapui_config"] = function()
+				require("dapui").close()
+			end
+
+		end,
+	},
+
+	-- {
+	-- 	"leoluz/nvim-dap-go",
+	-- 	ft = "go",
+	-- 	dependencies = {
+	-- 		"mfussenegger/nvim-dap",
+	-- 	},
+	--
+	-- 	config = function()
+	-- 		require("dap-go").setup({
+	-- 			-- Additional dap configurations can be added.
+	-- 			-- dap_configurations accepts a list of tables where each entry
+	-- 			-- represents a dap configuration. For more details do:
+	-- 			-- :help dap-configuration
+	-- 			dap_configurations = {
+	-- 				{
+	-- 					-- Must be "go" or it will be ignored by the plugin
+	-- 					type = "go",
+	-- 					name = "Attach remote",
+	-- 					mode = "remote",
+	-- 					request = "attach",
+	-- 				},
+	-- 			},
+	-- 			-- delve configurations
+	-- 			delve = {
+	-- 				-- the path to the executable dlv which will be used for debugging.
+	-- 				-- by default, this is the "dlv" executable on your PATH.
+	-- 				path = "dlv",
+	-- 				-- time to wait for delve to initialize the debug session.
+	-- 				-- default to 20 seconds
+	-- 				initialize_timeout_sec = 20,
+	-- 				-- a string that defines the port to start delve debugger.
+	-- 				-- default to string "${port}" which instructs nvim-dap
+	-- 				-- to start the process in a random available port
+	-- 				port = "${port}",
+	-- 				-- additional args to pass to dlv
+	-- 				args = {},
+	-- 				-- the build flags that are passed to delve.
+	-- 				-- defaults to empty string, but can be used to provide flags
+	-- 				-- such as "-tags=unit" to make sure the test suite is
+	-- 				-- compiled during debugging, for example.
+	-- 				-- passing build flags using args is ineffective, as those are
+	-- 				-- ignored by delve in dap mode.
+	-- 				build_flags = "",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 }
 
 local opts = {}
