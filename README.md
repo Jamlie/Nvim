@@ -107,7 +107,6 @@ nvim
 | \<leader>cd |     Diagnostics     |  n   |
 | \<leader>cr |       Rename        |  n   |
 | \<leader>ct |       Trouble       |  n   |
-| \<leader>k  |  Rust code actions  |  n   |
 
 ### NvimTree
 

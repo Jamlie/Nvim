@@ -1,7 +1,7 @@
 local M = {}
 local map = vim.keymap.set
 
-M["<leader>k"] = {
+M["K"] = {
 	name = "RustLSP",
 	mode = "n",
 	"<cmd>RustLsp hover actions<CR>",
@@ -270,7 +270,7 @@ vim.keymap.set(
 	"v",
 	"<leader>/",
 	":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-	{ desc = "Toggle Comment" }
+	{ desc = "Toggle Comment", noremap = true }
 )
 
 return M
