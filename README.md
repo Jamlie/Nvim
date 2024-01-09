@@ -1,6 +1,6 @@
 # Custom PDE with NeoVim
 
-A personal neovim configuration for `Go` and `JS`
+A personal neovim configuration for `Go`, `Rust`, `JS`
 
 | Language | LSP           | Formatter                           | Debuggers               |
 | -------- | ------------- | ----------------------------------- | ----------------------- |
