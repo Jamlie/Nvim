@@ -130,6 +130,7 @@ nvim
 | \<leader>fw  |   Find word    |  n   |
 | \<leader>fb  |    Buffers     |  n   |
 | \<leader>fh  |   Old files    |  n   |
+| \<leader>th  |   Pick theme   |  n   |
 | \<leader>fgb |  Git branches  |  n   |
 | \<leader>fgc |  Git commits   |  n   |
 | \<leader>fgs |   Git status   |  n   |
