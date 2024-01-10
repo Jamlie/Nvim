@@ -18,6 +18,8 @@ A personal neovim configuration for `Go`, `Rust`, `JS`
 
 ![Telescope](https://cdn.discordapp.com/attachments/1135974583896395926/1193963445587017768/image.png?ex=65aea01c&is=659c2b1c&hm=e190ce8abd29204610453b15989847905b3dadd2bebcaf950eabcac5b055748a&)
 
+![Dap](https://cdn.discordapp.com/attachments/1058483874616848495/1194743731459461160/image.png?ex=65b176ce&is=659f01ce&hm=31457b27c70c4210e5eab9a2eec89c7b472f8dbca5d9156df93025d2384e0dde&)
+
 ## Dependencies
 
 1. [fzf](https://github.com/junegunn/fzf)
@@ -165,3 +167,11 @@ nvim
 | \<leader>dsi |   Dap step into   |  n   |
 | \<leader>dsu |   Dap step out    |  n   |
 | \<leader>dso |   Dap step over   |  n   |
+
+### Icons
+
+|     Key     |    Description     | Mode |
+| :---------: | :----------------: | :--: |
+| \<leader>ic | Icon picker normal |  n   |
+| \<leader>yc |  Icon picker yank  |  n   |
+|   \<C-i>    | Icon picker insert |  n   |
