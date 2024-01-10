@@ -6,9 +6,9 @@ function M.setup()
 
 	notify.setup({
 		fps = 300,
-		timeout = 3200,
+		timeout = 3000,
 		stages = "fade",
-		top_down = false,
+		top_down = true,
 		background_colour = "#000000",
     icons = {
       ERROR = icons.diagnostics.error,
@@ -18,10 +18,10 @@ function M.setup()
       TRACE = icons.diagnostics.trace,
     },
     max_width = function()
-      return math.floor(vim.o.columns * 0.4)
+      return math.floor(vim.o.columns * 0.5)
     end,
     max_height = function()
-      return math.floor(vim.o.columns * 0.8)
+      return math.floor(vim.o.columns * 0.9)
     end,
     render = function(...)
       local notification = select(2, ...)

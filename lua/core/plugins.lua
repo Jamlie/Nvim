@@ -3,6 +3,15 @@ local overrides = require("core.config.ai.copilot")
 local plugins = {
 	-- file-tree
 	'nvim-tree/nvim-tree.lua',
+	-- {
+ --    "nvim-neo-tree/neo-tree.nvim",
+ --    branch = "v3.x",
+ --    dependencies = {
+ --      "nvim-lua/plenary.nvim",
+ --      "nvim-tree/nvim-web-devicons",
+ --      "MunifTanjim/nui.nvim",
+ --    }
+	-- },
 	{
 		'nvim-tree/nvim-web-devicons',
 		config = function()
@@ -70,13 +79,6 @@ local plugins = {
   },
 
 	-- dashboard
-	-- {
-	-- 	"startup-nvim/startup.nvim",
-	-- 	dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-	-- 	config = function()
-	-- 		require("startup").setup()
-	-- 	end
-	-- },
 	{
 		'goolord/alpha-nvim',
     config = function ()
@@ -104,7 +106,7 @@ local plugins = {
 	{
 		"windwp/nvim-autopairs",
     config = function()
-			require("nvim-autopairs").setup {}
+			require("nvim-autopairs").setup()
 		end
 	},
 
@@ -158,7 +160,6 @@ local plugins = {
 	-- git
 	{
 		"kdheepak/lazygit.nvim",
-		-- optional for floating window border decoration
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -202,6 +203,7 @@ local plugins = {
 		end,
 	},
 
+	-- better code actions
 	{
 		"aznhe21/actions-preview.nvim",
 		config = function()
@@ -209,6 +211,7 @@ local plugins = {
 		end,
 	},
 
+	-- templ
 	{
 		"vrischmann/tree-sitter-templ",
 		event = "BufRead",
@@ -218,6 +221,7 @@ local plugins = {
 	},
 
 
+	-- new cmdline and a new messages (error, warning, info)
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -237,12 +241,14 @@ local plugins = {
 		end,
 	},
 
+	-- rust
 	{
 		'mrcjkb/rustaceanvim',
 		version = '^3',
 		ft = { 'rust' },
 	},
 
+	-- Dap
 	{
 		"mfussenegger/nvim-dap",
 	},
@@ -301,6 +307,27 @@ local plugins = {
 					build_flags = "",
 				},
 			})
+		end,
+	},
+
+	-- markdown
+	{
+		"ellisonleao/glow.nvim",
+		config = true,
+		cmd = "Glow"
+	},
+
+	-- icons
+	{
+		"ziontee113/icon-picker.nvim",
+		config = function()
+			require("icon-picker").setup({ disable_legacy_commands = true })
+
+			local opts = { noremap = true, silent = true }
+
+			vim.keymap.set("n", "<leader>ic", "<cmd>IconPickerNormal<cr>", opts)
+			vim.keymap.set("n", "<Leader>yc", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+			vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
 		end,
 	},
 }

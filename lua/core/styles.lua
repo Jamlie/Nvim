@@ -1,6 +1,7 @@
 styles.style = {
 	icons = {
 		logo = {
+			vim = "",
 			toml = "",
 			go = "",
 			rust = "",
@@ -22,19 +23,17 @@ styles.style = {
 			folder_open = "",
 			empty_folder = "",
 			emtpy_folder_open = "",
-			find_word = "",
 			find = "",
 		},
 		misc = {
       close = "",
 			telescope = "",
 			lsp = "",
-			vim = "",
 			terminal = "",
 		},
     diagnostics = {
       error = "",
-      warn = "",
+      warn = "",
       info = "",
       hint = "",
       debug = "",
@@ -42,7 +41,7 @@ styles.style = {
     },
 		dap = {
 			breakpoint = "",
-			stopped = "",
+			stopped = "󰔶",
 		},
 		separators = {
 			half_circle_left = "",

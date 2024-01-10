@@ -76,6 +76,19 @@ M["<C-d>"] = {
 }
 
 M["<C-n>"] = {
+	-- name = "NeoTree",
+	-- mode = "n",
+	-- "<cmd>Neotree<CR>",
+	-- "<cmd>Neotree<CR>",
+	-- function()
+	-- 	if require("nvim-tree.nvim").is_open() then
+	-- 		require("nvim-tree.nvim").close()
+	-- 	else
+	-- 		require("nvim-tree.nvim").open()
+	-- 	end
+	-- end,
+	-- "Toggle NeoTree",
+	-- { noremap = true },
 	name = "NvimTree",
 	mode = "n",
 	"<cmd>NvimTreeFindFileToggle<CR>",
