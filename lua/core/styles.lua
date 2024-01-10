@@ -1,9 +1,23 @@
 styles.style = {
 	icons = {
+		logo = {
+			toml = "",
+			go = "",
+			rust = "",
+			lua = "",
+			python = "",
+			sh = "",
+			js = "",
+			ts = "",
+			html = "",
+			css = "",
+			json = "",
+			java = "",
+		},
 		documents = {
 			file = "",
       restart = "",
-			harpoon_files = "",
+			harpoon_files = "",
 			folder = "",
 			folder_open = "",
 			empty_folder = "",

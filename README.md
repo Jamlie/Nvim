@@ -137,13 +137,13 @@ nvim
 
 ### Bufferline
 
-|     Key     |     Description     | Mode |
-| :---------: | :-----------------: | :--: |
-|   \<Tab>    |     Next buffer     |  n   |
-|  \<S-Tab>   |     Next buffer     |  n   |
-| \<leader>bp |     Pick buffer     |  n   |
-| \<leader>bx |    Close buffer     |  n   |
-| \<leader>bX | Close other buffers |  n   |
+|    Key     |     Description     | Mode |
+| :--------: | :-----------------: | :--: |
+|   \<Tab>   |     Next buffer     |  n   |
+|  \<S-Tab>  |     Next buffer     |  n   |
+| \<leader>p |     Pick buffer     |  n   |
+| \<leader>x |    Close buffer     |  n   |
+| \<leader>X | Close other buffers |  n   |
 
 ### Harpoon
 

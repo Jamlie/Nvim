@@ -39,10 +39,10 @@ function M.setup()
 		val = {
 			btn("e", styles.style.icons.documents.file .. "	New File", ":ene <BAR> startinsert <CR>"),
 			btn("SPC f f", styles.style.icons.documents.find .. "	Find File", ":Telescope find_files <CR>"),
-			btn("SPC f w", styles.style.icons.documents.find_word .. "	Find Word", ":Telescope live_grep <CR>"),
+			btn("SPC f w", styles.style.icons.misc.telescope .. "	Find Word", ":Telescope live_grep <CR>"),
 			btn("SPC f h", styles.style.icons.documents.restart .. "	Find History", ":Telescope oldfiles <CR>"),
 			btn("SPC o h", styles.style.icons.documents.harpoon_files .. "	Open Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<CR>"),
-			btn("q", styles.style.icons.documents.file .. "	Quit", ":qa <CR>"),
+			btn("q", styles.style.icons.misc.close .. "	Quit", ":qa <CR>"),
 		},
 		opts = {
 			spacing = 1,

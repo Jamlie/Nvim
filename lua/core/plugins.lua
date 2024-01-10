@@ -3,7 +3,12 @@ local overrides = require("core.config.ai.copilot")
 local plugins = {
 	-- file-tree
 	'nvim-tree/nvim-tree.lua',
-  'nvim-tree/nvim-web-devicons',
+	{
+		'nvim-tree/nvim-web-devicons',
+		config = function()
+			require("core.config.ui.nvim-web-devicons").setup()
+		end,
+	},
 	-- statusline
 	'nvim-lualine/lualine.nvim',
 
