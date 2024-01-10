@@ -30,7 +30,7 @@ function M.setup()
 				color = "#61afef",
 				name = "Class",
 			},
-		}
+		},
 	})
 end
 

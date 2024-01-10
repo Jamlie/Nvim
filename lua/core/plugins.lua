@@ -2,29 +2,29 @@ local overrides = require("core.config.ai.copilot")
 
 local plugins = {
 	-- file-tree
-	'nvim-tree/nvim-tree.lua',
+	"nvim-tree/nvim-tree.lua",
 	-- {
- --    "nvim-neo-tree/neo-tree.nvim",
- --    branch = "v3.x",
- --    dependencies = {
- --      "nvim-lua/plenary.nvim",
- --      "nvim-tree/nvim-web-devicons",
- --      "MunifTanjim/nui.nvim",
- --    }
+	--    "nvim-neo-tree/neo-tree.nvim",
+	--    branch = "v3.x",
+	--    dependencies = {
+	--      "nvim-lua/plenary.nvim",
+	--      "nvim-tree/nvim-web-devicons",
+	--      "MunifTanjim/nui.nvim",
+	--    }
 	-- },
 	{
-		'nvim-tree/nvim-web-devicons',
+		"nvim-tree/nvim-web-devicons",
 		config = function()
 			require("core.config.ui.nvim-web-devicons").setup()
 		end,
 	},
 	-- statusline
-	'nvim-lualine/lualine.nvim',
+	"nvim-lualine/lualine.nvim",
 
 	-- highlight the same word
-	'RRethy/vim-illuminate',
+	"RRethy/vim-illuminate",
 
-	'nvim-lua/plenary.nvim',
+	"nvim-lua/plenary.nvim",
 
 	-- syntax highlighting
 	{
@@ -35,12 +35,12 @@ local plugins = {
 	},
 	-- bufferline
 	{
-		'akinsho/bufferline.nvim',
+		"akinsho/bufferline.nvim",
 		version = "*",
-		dependencies = 'nvim-tree/nvim-web-devicons',
+		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			require("core.config.ui.bufferline").setup()
-		end
+		end,
 	},
 
 	-- colorscheme
@@ -60,7 +60,7 @@ local plugins = {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		opts = {}
+		opts = {},
 	},
 
 	-- copilot
@@ -71,43 +71,43 @@ local plugins = {
 	},
 
 	-- which-key
-  {
-    "folke/which-key.nvim",
-    config = function()
+	{
+		"folke/which-key.nvim",
+		config = function()
 			require("core.config.essentials.which-key").setup()
-    end
-  },
+		end,
+	},
 
 	-- dashboard
 	{
-		'goolord/alpha-nvim',
-    config = function ()
+		"goolord/alpha-nvim",
+		config = function()
 			require("core.config.ui.alpha").setup()
-    end
+		end,
 	},
 
 	-- comments gcc gc...
-  {
-		'numToStr/Comment.nvim',
+	{
+		"numToStr/Comment.nvim",
 		config = function()
-      require('Comment').setup()
-    end
-  },
+			require("Comment").setup()
+		end,
+	},
 
 	-- telescope
-	'nvim-telescope/telescope-ui-select.nvim',
-  {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
+	"nvim-telescope/telescope-ui-select.nvim",
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.5",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 
 	-- autopairs () {} [] '' "" ``
 	{
 		"windwp/nvim-autopairs",
-    config = function()
+		config = function()
 			require("nvim-autopairs").setup()
-		end
+		end,
 	},
 
 	-- terminal
@@ -117,7 +117,9 @@ local plugins = {
 		config = "*",
 		keys = {
 			{
-				"<C-\\>", "<cmd>ToggleTerm size=40 direction=float<cr>", desc = "Open a floating terminal at the Desktop directory",
+				"<C-\\>",
+				"<cmd>ToggleTerm size=40 direction=float<cr>",
+				desc = "Open a floating terminal at the Desktop directory",
 			},
 		},
 	},
@@ -146,14 +148,14 @@ local plugins = {
 		config = function()
 			require("go").setup()
 		end,
-		event = {"CmdlineEnter"},
-		ft = {"go", 'gomod'},
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all_sync()',
 	},
 
 	-- change how things look
 	{
-		'stevearc/dressing.nvim',
+		"stevearc/dressing.nvim",
 		opts = {},
 	},
 
@@ -165,25 +167,25 @@ local plugins = {
 		},
 	},
 	{
-		'lewis6991/gitsigns.nvim',
+		"lewis6991/gitsigns.nvim",
 		config = function()
-			require('gitsigns').setup()
-		end
+			require("gitsigns").setup()
+		end,
 	},
 
 	-- lsp
-  'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-nvim-lsp',
-  'saadparwaiz1/cmp_luasnip',
-  'rafamadriz/friendly-snippets',
-	'onsails/lspkind.nvim',
-  'L3MON4D3/LuaSnip',
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-nvim-lsp",
+	"saadparwaiz1/cmp_luasnip",
+	"rafamadriz/friendly-snippets",
+	"onsails/lspkind.nvim",
+	"L3MON4D3/LuaSnip",
 
-  {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  },
+	{
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	},
 
 	-- colors
 	{
@@ -220,7 +222,6 @@ local plugins = {
 		end,
 	},
 
-
 	-- new cmdline and a new messages (error, warning, info)
 	{
 		"folke/noice.nvim",
@@ -243,9 +244,9 @@ local plugins = {
 
 	-- rust
 	{
-		'mrcjkb/rustaceanvim',
-		version = '^3',
-		ft = { 'rust' },
+		"mrcjkb/rustaceanvim",
+		version = "^3",
+		ft = { "rust" },
 	},
 
 	-- Dap
@@ -270,14 +271,13 @@ local plugins = {
 			dap.listeners.before.event_exited["dapui_config"] = function()
 				require("dapui").close()
 			end
-
 		end,
 	},
 
 	{
-		'theHamsta/nvim-dap-virtual-text',
+		"theHamsta/nvim-dap-virtual-text",
 		config = function()
-			require('nvim-dap-virtual-text').setup()
+			require("nvim-dap-virtual-text").setup()
 		end,
 	},
 
@@ -314,7 +314,7 @@ local plugins = {
 	{
 		"ellisonleao/glow.nvim",
 		config = true,
-		cmd = "Glow"
+		cmd = "Glow",
 	},
 
 	-- icons

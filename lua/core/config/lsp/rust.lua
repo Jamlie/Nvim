@@ -8,7 +8,7 @@ local extension_path = codelldb:get_install_path() .. "/extension/"
 local codelldb_path = extension_path .. "/adapter/codelldb"
 local liblldb_path = extension_path .. "/lldb/bin/liblldb"
 
-if this_os:find "Windows" then
+if this_os:find("Windows") then
 	codelldb_path = extension_path .. "\\adapter\\codelldb.exe"
 	liblldb_path = extension_path .. "\\lldb\\bin\\liblldb.dll"
 else
@@ -16,7 +16,7 @@ else
 end
 
 vim.g.rustaceanvim = {
-  dap = {
+	dap = {
 		adapter = require("rustaceanvim.config").get_codelldb_adapter(codelldb_path, liblldb_path),
-  },
+	},
 }

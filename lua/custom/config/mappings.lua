@@ -8,8 +8,8 @@ local M = {
 				})
 			end,
 			"Change Theme",
-		}
-	}
+		},
+	},
 }
 
 return M

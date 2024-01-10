@@ -143,19 +143,9 @@ M["<C-c>"] = {
 	"Copy to Clipboard",
 }
 
-map(
-	"v",
-	"J",
-	":m '>+1<CR>gv=gv",
-	{ desc = "Move line down" }
-)
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 
-map(
-	"v",
-	"K",
-	":m '<-2<CR>gv=gv",
-	{ desc = "Move line up" }
-)
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 M["<leader>g"] = {
 	name = "+Git",
@@ -186,7 +176,7 @@ M["<leader>c"] = {
 		function()
 			vim.lsp.buf.code_action()
 		end,
-		"Code Action"
+		"Code Action",
 	},
 	t = { "<cmd>Trouble<CR>", "Trouble" },
 	f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
@@ -195,7 +185,7 @@ M["<leader>c"] = {
 		function()
 			vim.lsp.buf.rename()
 		end,
-		"Rename"
+		"Rename",
 	},
 }
 
@@ -245,7 +235,7 @@ M["<leader>X"] = {
 	name = "Close Buffer",
 	mode = "n",
 	"<cmd>BufferLineCloseOthers<CR>",
-	"Close Other Buffers"
+	"Close Other Buffers",
 }
 
 M["<leader>p"] = {
@@ -300,9 +290,9 @@ M["<C-j>"] = {
 M["<leader>/"] = {
 	mode = "n",
 	function()
-		require('Comment.api').toggle.linewise.current()
+		require("Comment.api").toggle.linewise.current()
 	end,
-	"Toggle Comment"
+	"Toggle Comment",
 }
 
 vim.keymap.set(

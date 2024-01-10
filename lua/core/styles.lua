@@ -17,7 +17,7 @@ styles.style = {
 		},
 		documents = {
 			file = "",
-      restart = "",
+			restart = "",
 			harpoon_files = "",
 			folder = "",
 			folder_open = "",
@@ -26,19 +26,19 @@ styles.style = {
 			find = "",
 		},
 		misc = {
-      close = "",
+			close = "",
 			telescope = "",
 			lsp = "",
 			terminal = "",
 		},
-    diagnostics = {
-      error = "",
-      warn = "",
-      info = "",
-      hint = "",
-      debug = "",
-      trace = "",
-    },
+		diagnostics = {
+			error = "",
+			warn = "",
+			info = "",
+			hint = "",
+			debug = "",
+			trace = "",
+		},
 		dap = {
 			breakpoint = "",
 			stopped = "󰔶",
@@ -46,7 +46,7 @@ styles.style = {
 		separators = {
 			half_circle_left = "",
 			half_circle_right = "",
-		}
+		},
 	},
 	banner = {
 		[[	 ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓  ]],
@@ -59,5 +59,5 @@ styles.style = {
 		[[		 ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░     ]],
 		[[					 ░    ░  ░    ░ ░        ░   ░         ░     ]],
 		[[																	░                    ]],
-	}
+	},
 }

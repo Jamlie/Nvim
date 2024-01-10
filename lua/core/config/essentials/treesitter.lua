@@ -1,9 +1,9 @@
-require("nvim-treesitter.configs").setup {
- ensure_installed = { "c", "lua", "rust", "go", "javascript" },
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "c", "lua", "rust", "go", "javascript" },
 
- -- sync_install = true,
-  auto_install = true,
-  highlight = {
-    enable = true,
-  },
-}
+	-- sync_install = true,
+	auto_install = true,
+	highlight = {
+		enable = true,
+	},
+})

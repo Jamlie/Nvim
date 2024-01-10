@@ -2,8 +2,8 @@ local copilot = {}
 
 copilot.copilot = {
 	suggestion = {
-		auto_trigger = true
-	}
+		auto_trigger = true,
+	},
 }
 
 return copilot

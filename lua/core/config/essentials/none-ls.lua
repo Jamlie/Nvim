@@ -30,7 +30,7 @@ local opts = {
 
 		-- rust
 		null_ls.builtins.formatting.rustfmt,
-},
+	},
 	on_attach = on_attach,
 }
 
