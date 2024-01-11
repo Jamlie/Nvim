@@ -85,13 +85,12 @@ nvim
 |   \<C-l>    |          Switch to the buffer to the right           |  n   |
 |   \<C-k>    |           Switch to the buffer to the top            |  n   |
 |   \<C-j>    |          Switch to the buffer to the bottom          |  n   |
+|   \<C-c>    |                    Copy the file                     |  n   |
 |      n      | Search for the next same word (Cursor in the middle) |  n   |
 |      N      | Search for the prev same word (Cursor in the middle) |  n   |
 |      J      |                  Move the line down                  |  v   |
 |      K      |                   Move the line up                   |  v   |
 |      p      |     Don't copy over visual selection after paste     |  n   |
-| \<leader>s  |                         Save                         |  n   |
-| \<leader>c  |                    Copy the file                     |  n   |
 | \<leader>\  |               Toggle floating terminal               |  n   |
 | \<leader>/  |                    Toggle comment                    | n, v |
 | \<leader>ie |                  Go Error Handling                   |  n   |
