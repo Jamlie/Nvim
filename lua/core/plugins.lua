@@ -270,7 +270,7 @@ local plugins = {
 	{
 		"mfussenegger/nvim-dap",
 		config = function()
-			require("core.config.essentials.dap-js")
+			require("core.config.dap.js")
 		end,
 	},
 

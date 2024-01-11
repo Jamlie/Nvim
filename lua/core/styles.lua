@@ -35,7 +35,7 @@ styles.style = {
 			error = "",
 			warn = "",
 			info = "",
-			hint = "",
+			hint = "",
 			debug = "",
 			trace = "",
 		},
