@@ -27,11 +27,15 @@ o.whichwrap = o.whichwrap .. "<,>,[,],l,h"
 
 o.fileencoding = "UTF-8"
 
-opt.shell = "pwsh.exe -NoLogo"
-opt.shellcmdflag =
-	"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-vim.cmd([[
-  let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-  let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-  set shellquote= shellxquote=
-]])
+local this_os = vim.loop.os_uname().sysname
+
+if this_os:find("Windows") then
+	opt.shell = "pwsh.exe -NoLogo"
+	opt.shellcmdflag =
+		"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+	vim.cmd([[
+		let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+		let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+		set shellquote= shellxquote=
+	]])
+end
