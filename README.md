@@ -2,11 +2,11 @@
 
 A personal neovim configuration for `Go`, `Rust`, `JS`
 
-| Language | LSP           | Formatter                           | Debuggers               |
-| -------- | ------------- | ----------------------------------- | ----------------------- |
-| Go       | gopls         | gofumpt, goimports_reviser, golines | delve (use dlv command) |
-| JS/TS    | tsserver      | prettierd                           | ...                     |
-| Rust     | rust_analyzer | rustfmt                             | codelldb                |
+| Language | LSP           | Formatter                           | Debuggers                              |
+| -------- | ------------- | ----------------------------------- | -------------------------------------- |
+| Go       | gopls         | gofumpt, goimports_reviser, golines | delve (use dlv command for Powershell) |
+| JS/TS    | tsserver      | prettierd                           | ...                                    |
+| Rust     | rust_analyzer | rustfmt                             | codelldb                               |
 
 ## Preview
 
