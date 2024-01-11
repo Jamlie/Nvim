@@ -183,6 +183,23 @@ local plugins = {
 
 	{
 		"williamboman/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"lua_ls",
+				"tsserver",
+				"gopls",
+				"rust_analyzer",
+				"pyright",
+				"codelldb",
+				"delve",
+				"goimports",
+				"gofumpt",
+				"golines",
+				"prettierd",
+			},
+		},
+	},
+	{
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
 	},
@@ -256,7 +273,7 @@ local plugins = {
 
 	{
 		"rcarriga/nvim-dap-ui",
-		deps = {
+		dependencies = {
 			"mfussenegger/nvim-dap",
 		},
 		config = function()
