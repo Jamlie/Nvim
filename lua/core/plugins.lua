@@ -269,6 +269,9 @@ local plugins = {
 	-- Dap
 	{
 		"mfussenegger/nvim-dap",
+		config = function()
+			require("core.config.essentials.dap-js")
+		end,
 	},
 
 	{

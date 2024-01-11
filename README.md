@@ -5,7 +5,7 @@ A personal neovim configuration for `Go`, `Rust`, `JS`
 | Language | LSP           | Formatter                           | Debuggers                              |
 | -------- | ------------- | ----------------------------------- | -------------------------------------- |
 | Go       | gopls         | gofumpt, goimports_reviser, golines | delve (use dlv command for Powershell) |
-| JS/TS    | tsserver      | prettierd                           | ...                                    |
+| JS/TS    | tsserver      | prettierd                           | js-debug-adapter                       |
 | Rust     | rust_analyzer | rustfmt                             | codelldb                               |
 
 ## Preview
