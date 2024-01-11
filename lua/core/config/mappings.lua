@@ -129,13 +129,6 @@ M["<Esc>"] = {
 	"Clear Highlight",
 }
 
-M["<C-s>"] = {
-	name = "Save",
-	mode = "n",
-	"<cmd>w<CR>",
-	"Save",
-}
-
 M["<C-c>"] = {
 	name = "Copy",
 	mode = "n",
