@@ -53,6 +53,7 @@ local plugins = {
 	-- diagnostics
 	{
 		"folke/trouble.nvim",
+		event = "VeryLazy",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
@@ -89,6 +90,7 @@ local plugins = {
 	-- comments gcc gc...
 	{
 		"numToStr/Comment.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("Comment").setup()
 		end,
@@ -113,6 +115,7 @@ local plugins = {
 	-- terminal
 	{
 		"akinsho/toggleterm.nvim",
+		event = "VeryLazy",
 		tag = "*",
 		config = "*",
 		keys = {
@@ -162,12 +165,14 @@ local plugins = {
 	-- git
 	{
 		"kdheepak/lazygit.nvim",
+		event = "VeryLazy",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
 	},
 	{
 		"lewis6991/gitsigns.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("gitsigns").setup()
 		end,
@@ -269,6 +274,7 @@ local plugins = {
 	-- Dap
 	{
 		"mfussenegger/nvim-dap",
+		event = "VeryLazy",
 		config = function()
 			require("core.config.dap.js")
 		end,
@@ -276,6 +282,7 @@ local plugins = {
 
 	{
 		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
 		dependencies = {
 			"mfussenegger/nvim-dap",
 		},
@@ -296,6 +303,7 @@ local plugins = {
 
 	{
 		"theHamsta/nvim-dap-virtual-text",
+		event = "VeryLazy",
 		config = function()
 			require("nvim-dap-virtual-text").setup()
 		end,
@@ -303,6 +311,7 @@ local plugins = {
 
 	{
 		"leoluz/nvim-dap-go",
+		event = "VeryLazy",
 		ft = "go",
 		dependencies = {
 			"mfussenegger/nvim-dap",
@@ -333,6 +342,7 @@ local plugins = {
 	-- markdown
 	{
 		"ellisonleao/glow.nvim",
+		event = "VeryLazy",
 		config = true,
 		cmd = "Glow",
 	},
@@ -340,6 +350,7 @@ local plugins = {
 	-- icons
 	{
 		"ziontee113/icon-picker.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("icon-picker").setup({ disable_legacy_commands = true })
 
@@ -362,3 +373,4 @@ end
 local opts = {}
 
 return plugins, opts
+
