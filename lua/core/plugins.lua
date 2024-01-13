@@ -194,6 +194,7 @@ local plugins = {
 				"tsserver",
 				"gopls",
 				"rust_analyzer",
+				"html",
 				"pyright",
 				"codelldb",
 				"delve",

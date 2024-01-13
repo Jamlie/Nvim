@@ -47,12 +47,7 @@ lspconfig.html.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.cssls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-lspconfig.clangd.setup({
+lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
