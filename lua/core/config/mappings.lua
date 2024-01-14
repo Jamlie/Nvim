@@ -8,6 +8,13 @@ M["K"] = {
 	"Rust Hover Actions",
 }
 
+M["<leader>u"] = {
+	name = "UndoTree",
+	mode = "n",
+	t = { "<cmd>UndotreeToggle<CR>", "Toggle UndoTree" },
+	f = { "<cmd>UndotreeFocus<CR>", "Toggle Focus" },
+}
+
 M["<leader>d"] = {
 	name = "Debug",
 	mode = "n",

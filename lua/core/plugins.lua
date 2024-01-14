@@ -362,6 +362,9 @@ local plugins = {
 			vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
 		end,
 	},
+
+	-- undo tree
+	"mbbill/undotree",
 }
 
 local custom = require("custom.override")
