@@ -3,17 +3,9 @@ local overrides = require("core.config.ai.copilot")
 local plugins = {
 	-- file-tree
 	"nvim-tree/nvim-tree.lua",
-	-- {
-	--    "nvim-neo-tree/neo-tree.nvim",
-	--    branch = "v3.x",
-	--    dependencies = {
-	--      "nvim-lua/plenary.nvim",
-	--      "nvim-tree/nvim-web-devicons",
-	--      "MunifTanjim/nui.nvim",
-	--    }
-	-- },
 	{
 		"nvim-tree/nvim-web-devicons",
+		lazy = true,
 		config = function()
 			require("core.config.ui.nvim-web-devicons").setup()
 		end,
@@ -29,6 +21,7 @@ local plugins = {
 	-- syntax highlighting
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = true,
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
 		end,
@@ -60,6 +53,7 @@ local plugins = {
 	-- blankline when indenting
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "BufRead",
 		main = "ibl",
 		opts = {},
 	},
@@ -74,6 +68,7 @@ local plugins = {
 	-- which-key
 	{
 		"folke/which-key.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("core.config.essentials.which-key").setup()
 		end,
@@ -90,7 +85,7 @@ local plugins = {
 	-- comments gcc gc...
 	{
 		"numToStr/Comment.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			require("Comment").setup()
 		end,
@@ -98,6 +93,7 @@ local plugins = {
 
 	-- telescope
 	"nvim-telescope/telescope-ui-select.nvim",
+	event = "VeryLazy",
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
@@ -107,6 +103,7 @@ local plugins = {
 	-- autopairs () {} [] '' "" ``
 	{
 		"windwp/nvim-autopairs",
+		event = "InsertEnter",
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
@@ -127,19 +124,10 @@ local plugins = {
 		},
 	},
 
-	-- check https://github.com/kylechui/nvim-surround for keybindings
-	{
-		"kylechui/nvim-surround",
-		config = function()
-			require("nvim-surround").setup({
-				-- Configuration here, or leave empty to use defaults
-			})
-		end,
-	},
-
 	-- harpoon
 	{
 		"ThePrimeagen/harpoon",
+		event = "BufRead",
 	},
 	{
 		"ray-x/go.nvim",
@@ -159,6 +147,7 @@ local plugins = {
 	-- change how things look
 	{
 		"stevearc/dressing.nvim",
+		event = "VeryLazy",
 		opts = {},
 	},
 
@@ -172,7 +161,7 @@ local plugins = {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "VeryLazy",
+		event = "BufRead",
 		config = function()
 			require("gitsigns").setup()
 		end,
@@ -213,6 +202,7 @@ local plugins = {
 	-- colors
 	{
 		"NvChad/nvim-colorizer.lua",
+		event = "BufRead",
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -221,18 +211,10 @@ local plugins = {
 	-- formatter
 	{
 		"nvimtools/none-ls.nvim",
+		event = "BufRead",
 		ft = "go",
-		event = "VeryLazy",
 		opts = function()
 			return require("core.config.essentials.none-ls")
-		end,
-	},
-
-	-- better code actions
-	{
-		"aznhe21/actions-preview.nvim",
-		config = function()
-			vim.keymap.set({ "v", "n" }, "<leader>cs", require("actions-preview").code_actions)
 		end,
 	},
 
@@ -275,7 +257,6 @@ local plugins = {
 	-- Dap
 	{
 		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
 		config = function()
 			require("core.config.dap.js")
 		end,
@@ -283,7 +264,6 @@ local plugins = {
 
 	{
 		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
 		dependencies = {
 			"mfussenegger/nvim-dap",
 		},
@@ -304,7 +284,6 @@ local plugins = {
 
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		event = "VeryLazy",
 		config = function()
 			require("nvim-dap-virtual-text").setup()
 		end,
@@ -312,7 +291,6 @@ local plugins = {
 
 	{
 		"leoluz/nvim-dap-go",
-		event = "VeryLazy",
 		ft = "go",
 		dependencies = {
 			"mfussenegger/nvim-dap",
