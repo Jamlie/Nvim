@@ -2,17 +2,20 @@ local M = {}
 
 function M.setup()
 	require("noice").setup({
+		cmdline = {
+			view = "cmdline",
+		},
 		views = {
-			cmdline_popup = {
-				position = {
-					row = 5,
-					col = "50%",
-				},
-				size = {
-					width = 60,
-					height = "auto",
-				},
-			},
+			-- cmdline_popup = {
+			-- 	position = {
+			-- 		row = 5,
+			-- 		col = "50%",
+			-- 	},
+			-- 	size = {
+			-- 		width = 60,
+			-- 		height = "auto",
+			-- 	},
+			-- },
 			popupmenu = {
 				relative = "editor",
 				position = {
