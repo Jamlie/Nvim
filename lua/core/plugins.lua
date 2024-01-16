@@ -27,14 +27,14 @@ local plugins = {
 		end,
 	},
 	-- bufferline
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("core.config.ui.bufferline").setup()
-		end,
-	},
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	version = "*",
+	-- 	dependencies = "nvim-tree/nvim-web-devicons",
+	-- 	config = function()
+	-- 		require("core.config.ui.bufferline").setup()
+	-- 	end,
+	-- },
 
 	-- colorscheme
 	{

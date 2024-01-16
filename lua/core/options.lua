@@ -9,10 +9,10 @@ opt.clipboard = "unnamedplus"
 opt.number = true
 opt.smartindent = true
 
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = false
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 
 opt.colorcolumn = "128"
 

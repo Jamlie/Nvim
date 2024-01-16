@@ -93,6 +93,7 @@ nvim
 |      p      |     Don't copy over visual selection after paste     |  n   |
 | \<leader>\  |               Toggle floating terminal               |  n   |
 | \<leader>/  |                    Toggle comment                    | n, v |
+| \<leader>x  |                     Close buffer                     |  n   |
 | \<leader>ie |                  Go Error Handling                   |  n   |
 
 ### LSP
@@ -135,16 +136,6 @@ nvim
 | \<leader>fgb |  Git branches  |  n   |
 | \<leader>fgc |  Git commits   |  n   |
 | \<leader>fgs |   Git status   |  n   |
-
-### Bufferline
-
-|    Key     |     Description     | Mode |
-| :--------: | :-----------------: | :--: |
-|   \<Tab>   |     Next buffer     |  n   |
-|  \<S-Tab>  |     Next buffer     |  n   |
-| \<leader>p |     Pick buffer     |  n   |
-| \<leader>x |    Close buffer     |  n   |
-| \<leader>X | Close other buffers |  n   |
 
 ### Harpoon
 

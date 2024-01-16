@@ -83,19 +83,6 @@ M["<C-d>"] = {
 }
 
 M["<C-n>"] = {
-	-- name = "NeoTree",
-	-- mode = "n",
-	-- "<cmd>Neotree<CR>",
-	-- "<cmd>Neotree<CR>",
-	-- function()
-	-- 	if require("nvim-tree.nvim").is_open() then
-	-- 		require("nvim-tree.nvim").close()
-	-- 	else
-	-- 		require("nvim-tree.nvim").open()
-	-- 	end
-	-- end,
-	-- "Toggle NeoTree",
-	-- { noremap = true },
 	name = "NvimTree",
 	mode = "n",
 	"<cmd>NvimTreeFindFileToggle<CR>",
@@ -210,18 +197,6 @@ M["<leader>t"] = {
 	},
 }
 
-M["<Tab>"] = {
-	mode = "n",
-	"<cmd>BufferLineCycleNext<CR>",
-	"Next Buffer",
-}
-
-M["<S-Tab>"] = {
-	mode = "n",
-	"<cmd>BufferLineCyclePrev<CR>",
-	"Previous Buffer",
-}
-
 M["<leader>x"] = {
 	name = "Close Buffer",
 	mode = "n",
@@ -229,20 +204,6 @@ M["<leader>x"] = {
 		vim.cmd("bd")
 	end,
 	"Close Buffer",
-}
-
-M["<leader>X"] = {
-	name = "Close Buffer",
-	mode = "n",
-	"<cmd>BufferLineCloseOthers<CR>",
-	"Close Other Buffers",
-}
-
-M["<leader>p"] = {
-	name = "Pick Buffer",
-	mode = "n",
-	"<cmd>BufferLinePick<CR>",
-	"Pick Buffer",
 }
 
 -- harpoon
