@@ -26,6 +26,7 @@ g.mapleader = " "
 o.whichwrap = o.whichwrap .. "<,>,[,],l,h"
 
 o.fileencoding = "UTF-8"
+-- vim.cmd([[set guicursor=n-v-c-i:block]])
 
 local this_os = vim.loop.os_uname().sysname
 
