@@ -110,19 +110,19 @@ local plugins = {
 	},
 
 	-- terminal
-	-- {
-	-- 	"akinsho/toggleterm.nvim",
-	-- 	event = "VeryLazy",
-	-- 	tag = "*",
-	-- 	config = "*",
-	-- 	keys = {
-	-- 		{
-	-- 			"<C-\\>",
-	-- 			"<cmd>ToggleTerm size=40 direction=float<cr>",
-	-- 			desc = "Open a floating terminal at the Desktop directory",
-	-- 		},
-	-- 	},
-	-- },
+	{
+		"akinsho/toggleterm.nvim",
+		event = "VeryLazy",
+		tag = "*",
+		config = "*",
+		keys = {
+			{
+				"<C-\\>",
+				"<cmd>ToggleTerm size=40 direction=float<cr>",
+				desc = "Open a floating terminal at the Desktop directory",
+			},
+		},
+	},
 
 	-- harpoon
 	{
@@ -343,6 +343,7 @@ local plugins = {
 
 	-- undo tree
 	"mbbill/undotree",
+    "christoomey/vim-tmux-navigator"
 }
 
 local custom = require("custom.override")
