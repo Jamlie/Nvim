@@ -112,7 +112,7 @@ vim.cmd([[command! -bar -bang -nargs=? Wa w<bang> | a<bang>]])
 M["<leader>ie"] = {
 	name = "Error Handling",
 	mode = "n",
-	"oif err != nil {<CR>}<Esc>O\tlog.Fatal(err)<Esc>oreturn err",
+	"oif err != nil {<CR>}<Esc>Oreturn err",
 	"Golang Error Handling",
 }
 
