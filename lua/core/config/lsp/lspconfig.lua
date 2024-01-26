@@ -57,6 +57,12 @@ lspconfig.tailwindcss.setup({
 	capabilities = capabilities,
 })
 
+-- svelte
+lspconfig.svelte.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
 lspconfig.templ.setup({
 	on_attach = on_attach,
 	flags = {
