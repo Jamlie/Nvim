@@ -130,9 +130,9 @@ M["<C-c>"] = {
 	"Copy to Clipboard",
 }
 
-map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down", noremap = true, silent = true })
 
-map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up", noremap = true, silent = true })
 
 M["<leader>g"] = {
 	name = "+Git",
