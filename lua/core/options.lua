@@ -2,6 +2,7 @@ local opt = vim.opt
 local o = vim.o
 local wo = vim.wo
 local g = vim.g
+local loop = vim.loop
 
 opt.termguicolors = true
 opt.relativenumber = true
@@ -26,9 +27,9 @@ g.mapleader = " "
 o.whichwrap = o.whichwrap .. "<,>,[,],l,h"
 
 o.fileencoding = "UTF-8"
--- vim.cmd([[set guicursor=n-v-c-i:block]])
+vim.cmd([[set guicursor=n-v-c-i:block]])
 
-local this_os = vim.loop.os_uname().sysname
+local this_os = loop.os_uname().sysname
 
 if this_os:find("Windows") then
 	opt.shell = "pwsh.exe -NoLogo"
