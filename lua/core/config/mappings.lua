@@ -1,6 +1,13 @@
 local M = {}
 local map = vim.keymap.set
 
+M["<leader>-"] = {
+    name = "Oil",
+    mode = "n",
+    "<cmd>Oil<CR>",
+    "Open Oil",
+}
+
 M["K"] = {
 	name = "RustLSP",
 	mode = "n",
@@ -260,7 +267,7 @@ vim.keymap.set(
 	"v",
 	"<leader>/",
 	":lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-	{ desc = "Toggle Comment", noremap = true }
+	{ desc = "Toggle Comment", noremap = true, silent = true }
 )
 
 local custom = require("custom.override")

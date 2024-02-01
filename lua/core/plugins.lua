@@ -1,6 +1,12 @@
 local overrides = require("core.config.ai.copilot")
 
 local plugins = {
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
 	-- file-tree
 	"nvim-tree/nvim-tree.lua",
 	{
