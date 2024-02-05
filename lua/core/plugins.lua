@@ -1,13 +1,13 @@
 local overrides = require("core.config.ai.copilot")
 
 local plugins = {
+	-- file-tree
     {
         'stevearc/oil.nvim',
         opts = {},
-        -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-	-- file-tree
+
 	"nvim-tree/nvim-tree.lua",
 	{
 		"nvim-tree/nvim-web-devicons",
@@ -32,15 +32,6 @@ local plugins = {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
-	-- bufferline
-	-- {
-	-- 	"akinsho/bufferline.nvim",
-	-- 	version = "*",
-	-- 	dependencies = "nvim-tree/nvim-web-devicons",
-	-- 	config = function()
-	-- 		require("core.config.ui.bufferline").setup()
-	-- 	end,
-	-- },
 
 	-- colorscheme
 	{
@@ -81,12 +72,12 @@ local plugins = {
 	},
 
 	-- dashboard
-	{
-		"goolord/alpha-nvim",
-		config = function()
-			require("core.config.ui.alpha").setup()
-		end,
-	},
+	-- {
+	-- 	"goolord/alpha-nvim",
+	-- 	config = function()
+	-- 		require("core.config.ui.alpha").setup()
+	-- 	end,
+	-- },
 
 	-- comments gcc gc...
 	{
@@ -135,6 +126,8 @@ local plugins = {
 		"ThePrimeagen/harpoon",
 		event = "BufRead",
 	},
+
+    -- golang
 	{
 		"ray-x/go.nvim",
 		dependencies = {
@@ -332,23 +325,10 @@ local plugins = {
 		cmd = "Glow",
 	},
 
-	-- icons
-	{
-		"ziontee113/icon-picker.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("icon-picker").setup({ disable_legacy_commands = true })
-
-			local opts = { noremap = true, silent = true }
-
-			vim.keymap.set("n", "<leader>ic", "<cmd>IconPickerNormal<cr>", opts)
-			vim.keymap.set("n", "<Leader>yc", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
-			vim.keymap.set("i", "<C-i>", "<cmd>IconPickerInsert<cr>", opts)
-		end,
-	},
-
 	-- undo tree
 	"mbbill/undotree",
+
+    -- tmux
     "christoomey/vim-tmux-navigator"
 }
 
