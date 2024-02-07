@@ -6,6 +6,7 @@ M["<leader>-"] = {
     mode = "n",
     "<cmd>Oil<CR>",
     "Open Oil",
+    { noremap = true, silent = true },
 }
 
 M["K"] = {
