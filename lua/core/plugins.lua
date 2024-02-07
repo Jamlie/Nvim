@@ -8,7 +8,7 @@ local plugins = {
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
-	"nvim-tree/nvim-tree.lua",
+	-- "nvim-tree/nvim-tree.lua",
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
@@ -17,7 +17,7 @@ local plugins = {
 		end,
 	},
 	-- statusline
-	"nvim-lualine/lualine.nvim",
+	-- "nvim-lualine/lualine.nvim",
 
 	-- highlight the same word
 	"RRethy/vim-illuminate",
