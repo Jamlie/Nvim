@@ -8,7 +8,7 @@ local plugins = {
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
-	-- "nvim-tree/nvim-tree.lua",
+	"nvim-tree/nvim-tree.lua",
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
