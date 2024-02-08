@@ -1,5 +1,5 @@
 require("core.config.themes.catppuccin")
--- require("core.config.ui.lualine")
+require("core.config.ui.lualine")
 require("core.config.essentials.nvim-tree")
 require("core.config.essentials.treesitter")
 require("core.config.themes.theme").setTheme(require("custom.override").theme or "catppuccin")
