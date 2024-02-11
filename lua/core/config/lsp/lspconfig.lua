@@ -37,11 +37,6 @@ lspconfig.bashls.setup({
     capabilities = capabilities,
 })
 
--- lspconfig.rust_analyzer.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
--- }
-
 lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
