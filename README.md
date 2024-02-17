@@ -111,12 +111,6 @@ nvim
 | \<leader>cr |       Rename        |  n   |
 | \<leader>ct |       Trouble       |  n   |
 
-### NvimTree
-
-|  Key   | Description | Mode |
-| :----: | :---------: | :--: |
-| \<C-n> | Toggle tree |  n   |
-
 ### LazyGit
 
 |     Key     |  Description  | Mode |
