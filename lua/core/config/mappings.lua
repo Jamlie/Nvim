@@ -90,13 +90,13 @@ M["<C-d>"] = {
 	{ noremap = true },
 }
 
-M["<C-n>"] = {
-	name = "NvimTree",
-	mode = "n",
-	"<cmd>NvimTreeFindFileToggle<CR>",
-	"Toggle NvimTree",
-	{ noremap = true },
-}
+-- M["<C-n>"] = {
+-- 	name = "NvimTree",
+-- 	mode = "n",
+-- 	"<cmd>NvimTreeFindFileToggle<CR>",
+-- 	"Toggle NvimTree",
+-- 	{ noremap = true },
+-- }
 
 M["n"] = {
 	name = "Search",

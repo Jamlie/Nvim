@@ -65,3 +65,8 @@ lspconfig.templ.setup({
 	},
 	filetypes = { "templ" },
 })
+
+lspconfig.intelephense.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
