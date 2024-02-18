@@ -127,6 +127,13 @@ local plugins = {
 		event = "BufRead",
 	},
 
+    -- dart
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        config = true,
+    },
+
     -- golang
 	{
 		"ray-x/go.nvim",

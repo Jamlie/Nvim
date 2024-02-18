@@ -7,3 +7,4 @@ require("core.config.essentials.telescope")
 require("core.config.lsp.lspconfig")
 require("core.config.lsp.completions")
 require("core.config.lsp.rust")
+require("flutter-tools").setup {}
