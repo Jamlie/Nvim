@@ -2,11 +2,11 @@ local overrides = require("core.config.ai.copilot")
 
 local plugins = {
 	-- file-tree
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 
 	-- "nvim-tree/nvim-tree.lua",
 	{
@@ -71,13 +71,12 @@ local plugins = {
 		end,
 	},
 
-	-- dashboard
-	-- {
-	-- 	"goolord/alpha-nvim",
-	-- 	config = function()
-	-- 		require("core.config.ui.alpha").setup()
-	-- 	end,
-	-- },
+	{
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup()
+		end,
+	},
 
 	-- comments gcc gc...
 	{
@@ -127,14 +126,14 @@ local plugins = {
 		event = "BufRead",
 	},
 
-    -- dart
-    {
-        'akinsho/flutter-tools.nvim',
-        lazy = false,
-        config = true,
-    },
+	-- dart
+	{
+		"akinsho/flutter-tools.nvim",
+		lazy = false,
+		config = true,
+	},
 
-    -- golang
+	-- golang
 	{
 		"ray-x/go.nvim",
 		dependencies = {
@@ -180,6 +179,9 @@ local plugins = {
 	"rafamadriz/friendly-snippets",
 	"onsails/lspkind.nvim",
 	"L3MON4D3/LuaSnip",
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+	"windwp/nvim-ts-autotag",
 
 	{
 		"williamboman/mason.nvim",
@@ -199,10 +201,6 @@ local plugins = {
 				"prettierd",
 			},
 		},
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
 	},
 
 	-- colors
@@ -234,24 +232,24 @@ local plugins = {
 	},
 
 	-- new cmdline and a new messages (error, warning, info)
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			{
-				"rcarriga/nvim-notify",
-				config = function()
-					require("core.config.ui.notify").setup()
-				end,
-			},
-		},
-
-		config = function()
-			require("core.config.ui.noice").setup()
-		end,
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	--
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		{
+	-- 			"rcarriga/nvim-notify",
+	-- 			config = function()
+	-- 				require("core.config.ui.notify").setup()
+	-- 			end,
+	-- 		},
+	-- 	},
+	--
+	-- 	config = function()
+	-- 		require("core.config.ui.noice").setup()
+	-- 	end,
+	-- },
 
 	-- rust
 	{
@@ -324,19 +322,11 @@ local plugins = {
 		end,
 	},
 
-	-- markdown
-	{
-		"ellisonleao/glow.nvim",
-		event = "VeryLazy",
-		config = true,
-		cmd = "Glow",
-	},
-
 	-- undo tree
 	"mbbill/undotree",
 
-    -- tmux
-    "christoomey/vim-tmux-navigator"
+	-- tmux
+	"christoomey/vim-tmux-navigator",
 }
 
 local custom = require("custom.override")
@@ -349,4 +339,3 @@ end
 local opts = {}
 
 return plugins, opts
-

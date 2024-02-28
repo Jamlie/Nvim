@@ -25,13 +25,15 @@ local opts = {
 		null_ls.builtins.formatting.goimports_reviser,
 		null_ls.builtins.formatting.golines,
 
-		-- node
+		-- js
 		null_ls.builtins.formatting.prettierd,
 
-		-- rust
-		null_ls.builtins.formatting.rustfmt,
+		-- lua
+		null_ls.builtins.formatting.stylua,
 	},
 	on_attach = on_attach,
 }
+
+vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.format({ async = false })]])
 
 return opts
