@@ -10,15 +10,13 @@ A personal neovim configuration for `Go`, `Rust`, `JS`
 
 ## Preview
 
-![Dashboard](https://cdn.discordapp.com/attachments/1135974583896395926/1193961078623850788/image.png?ex=65ae9de7&is=659c28e7&hm=cf5848d15bd152252cb19df07fc630f2b9ee24fb11ffd772e1a0ce9832b32ed4&)
+![Lsp_Copilot](https://github.com/Jamlie/nvim/assets/88511754/824628fd-50dd-42b3-97e3-5727728f8d8c)
 
-![LSP](https://cdn.discordapp.com/attachments/1135974583896395926/1193962235417088110/image.png?ex=65ae9efb&is=659c29fb&hm=c377b2a600de35f84d651ec304e5a5f7df7a9cbf3bce317df48d020e327f5141&)
+![Uploading LazyGit.png…]()
 
-![LazyGit](https://cdn.discordapp.com/attachments/1135974583896395926/1193962807985721487/image.png?ex=65ae9f84&is=659c2a84&hm=d8f3e043a76559d85903f8aacaac1a89a303743be9bd597201ab22261fca97db&)
+![Uploading Telescope.png…]()
 
-![Telescope](https://cdn.discordapp.com/attachments/1135974583896395926/1193963445587017768/image.png?ex=65aea01c&is=659c2b1c&hm=e190ce8abd29204610453b15989847905b3dadd2bebcaf950eabcac5b055748a&)
-
-![Dap](https://cdn.discordapp.com/attachments/1058483874616848495/1194743731459461160/image.png?ex=65b176ce&is=659f01ce&hm=31457b27c70c4210e5eab9a2eec89c7b472f8dbca5d9156df93025d2384e0dde&)
+![Uploading DAP.png…]()
 
 ## Dependencies
 
