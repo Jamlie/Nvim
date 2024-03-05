@@ -151,11 +151,3 @@ nvim
 | \<leader>dsi |   Dap step into   |  n   |
 | \<leader>dsu |   Dap step out    |  n   |
 | \<leader>dso |   Dap step over   |  n   |
-
-### Icons
-
-|     Key     |    Description     | Mode |
-| :---------: | :----------------: | :--: |
-| \<leader>ic | Icon picker normal |  n   |
-| \<leader>yc |  Icon picker yank  |  n   |
-|   \<C-i>    | Icon picker insert |  n   |
