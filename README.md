@@ -10,13 +10,15 @@ A personal neovim configuration for `Go`, `Rust`, `JS`
 
 ## Preview
 
+![Oil](https://github.com/Jamlie/nvim/assets/88511754/b9c3d290-3d50-4f19-802b-7f0c430c636a)
+
 ![Lsp_Copilot](https://github.com/Jamlie/nvim/assets/88511754/824628fd-50dd-42b3-97e3-5727728f8d8c)
 
-![Uploading LazyGit.png…]()
+![LazyGit](https://github.com/Jamlie/nvim/assets/88511754/647bd531-586b-4151-8399-b6e6e3c3ed2c)
 
-![Uploading Telescope.png…]()
+![Telescope](https://github.com/Jamlie/nvim/assets/88511754/c8ae5649-c46f-4292-ba2a-5643ef760d32)
 
-![Uploading DAP.png…]()
+![DAP](https://github.com/Jamlie/nvim/assets/88511754/425331a0-929e-4a0c-992c-a6e80d1471d9)
 
 ## Dependencies
 
