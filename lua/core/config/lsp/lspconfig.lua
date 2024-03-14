@@ -33,8 +33,8 @@ lspconfig.zls.setup({
 })
 
 lspconfig.bashls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 lspconfig.pyright.setup({
@@ -53,8 +53,8 @@ lspconfig.tailwindcss.setup({
 })
 
 lspconfig.svelte.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 lspconfig.templ.setup({
@@ -66,15 +66,15 @@ lspconfig.templ.setup({
 })
 
 lspconfig.intelephense.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 lspconfig.dartls.setup({
-    on_attach = on_attach,
+	on_attach = on_attach,
 })
 
 lspconfig.clangd.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })

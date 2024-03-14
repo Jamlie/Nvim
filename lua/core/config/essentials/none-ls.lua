@@ -26,7 +26,7 @@ local opts = {
 		null_ls.builtins.formatting.golines,
 
 		-- js
-		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.prettier,
 
 		-- lua
 		null_ls.builtins.formatting.stylua,
