@@ -2,19 +2,19 @@ local M = {}
 local map = vim.keymap.set
 
 M["<leader>-"] = {
-    name = "Oil",
-    mode = "n",
-    "<cmd>Oil<CR>",
-    "Open Oil",
-    { noremap = true, silent = true },
+	name = "Oil",
+	mode = "n",
+	"<cmd>Oil<CR>",
+	"Open Oil",
+	{ noremap = true, silent = true },
 }
 
-M["K"] = {
-	name = "RustLSP",
-	mode = "n",
-	"<cmd>RustLsp hover actions<CR>",
-	"Rust Hover Actions",
-}
+-- M["K"] = {
+-- 	name = "RustLSP",
+-- 	mode = "n",
+-- 	"<cmd>RustLsp hover actions<CR>",
+-- 	"Rust Hover Actions",
+-- }
 
 M["<leader>u"] = {
 	name = "UndoTree",
@@ -152,7 +152,7 @@ M["<leader>f"] = {
 	name = "+Telescope",
 	mode = "n",
 	f = { "<cmd>Telescope find_files<CR>", "Find File" },
-	a = { "<cmd>Telescope find_files<CR> hidden=true", "Find All Files" },
+	a = { "<cmd>Telescope find_files hidden=true<CR>", "Find All Files" },
 	w = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
 	b = { "<cmd>Telescope buffers<CR>", "Buffers" },
 	h = { "<cmd>Telescope oldfiles<CR>", "History" },

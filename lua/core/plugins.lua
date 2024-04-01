@@ -182,6 +182,7 @@ local plugins = {
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"windwp/nvim-ts-autotag",
+	{ "folke/neodev.nvim", opts = {} },
 
 	{
 		"williamboman/mason.nvim",
@@ -198,7 +199,6 @@ local plugins = {
 				"goimports",
 				"gofumpt",
 				"golines",
-				-- "prettierd",
 			},
 		},
 	},
@@ -236,6 +236,13 @@ local plugins = {
 		"mrcjkb/rustaceanvim",
 		version = "^3",
 		ft = { "rust" },
+		keys = {
+			{
+				"K",
+				"<cmd>RustLsp hover actions<cr>",
+				desc = "Rust Hover Actions",
+			},
+		},
 	},
 
 	-- Dap
@@ -245,6 +252,7 @@ local plugins = {
 			require("core.config.dap.js")
 		end,
 	},
+	{ "nvim-neotest/nvim-nio" },
 
 	{
 		"rcarriga/nvim-dap-ui",

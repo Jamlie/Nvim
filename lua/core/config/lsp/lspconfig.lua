@@ -1,3 +1,5 @@
+require("neodev").setup()
+
 local lspconfig = require("lspconfig")
 
 require("mason").setup()
@@ -15,6 +17,24 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 lspconfig.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = {
+					"vim",
+					"require",
+				},
+			},
+			workspace = {
+				library = {
+					library = vim.api.nvim_get_runtime_file("", true),
+				},
+			},
+		},
+	},
 })
 
 lspconfig.tsserver.setup({
@@ -78,3 +98,7 @@ lspconfig.clangd.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+return {
+	on_attach = on_attach,
+}
