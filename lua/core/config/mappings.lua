@@ -1,6 +1,14 @@
 local M = {}
 local map = vim.keymap.set
 
+M["<C-\\>"] = {
+	name = "Close Terminal",
+	mode = "t",
+	"<C-\\><C-n>",
+	"Close Terminal",
+	{ noremap = true, silent = true },
+}
+
 M["<leader>-"] = {
 	name = "Oil",
 	mode = "n",
@@ -8,13 +16,6 @@ M["<leader>-"] = {
 	"Open Oil",
 	{ noremap = true, silent = true },
 }
-
--- M["K"] = {
--- 	name = "RustLSP",
--- 	mode = "n",
--- 	"<cmd>RustLsp hover actions<CR>",
--- 	"Rust Hover Actions",
--- }
 
 M["<leader>u"] = {
 	name = "UndoTree",
@@ -181,6 +182,18 @@ M["<leader>c"] = {
 			vim.lsp.buf.rename()
 		end,
 		"Rename",
+	},
+	p = {
+		function()
+			vim.diagnostic.goto_prev()
+		end,
+		"Go to previous error",
+	},
+	n = {
+		function()
+			vim.diagnostic.goto_next()
+		end,
+		"Go to next error",
 	},
 }
 

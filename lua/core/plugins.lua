@@ -1,4 +1,4 @@
-local overrides = require("core.config.ai.copilot")
+-- local overrides = require("core.config.ai.copilot")
 
 local plugins = {
 	-- file-tree
@@ -56,11 +56,11 @@ local plugins = {
 	},
 
 	-- copilot
-	{
-		"zbirenbaum/copilot.lua",
-		event = "InsertEnter",
-		opts = overrides.copilot,
-	},
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	event = "InsertEnter",
+	-- 	opts = overrides.copilot,
+	-- },
 
 	-- which-key
 	{
