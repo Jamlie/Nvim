@@ -160,6 +160,7 @@ M["<leader>f"] = {
 	g = {
 		name = "+Git",
 		b = { "<cmd>Telescope git_branches<CR>", "Git Branches" },
+		f = { "<cmd>Telescope git_files<CR>", "Git Files" },
 		c = { "<cmd>Telescope git_commits<CR>", "Git Commits" },
 		s = { "<cmd>Telescope git_status<CR>", "Git Status" },
 	},
