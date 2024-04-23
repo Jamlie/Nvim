@@ -79,6 +79,11 @@ lspconfig.html.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.cssls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -110,6 +115,13 @@ lspconfig.clangd.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.angularls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.astro.setup({})
 
 return {
 	on_attach = on_attach,
