@@ -30,6 +30,9 @@ local opts = {
 
 		-- lua
 		null_ls.builtins.formatting.stylua,
+
+		-- dart
+		null_ls.builtins.formatting.dart_format,
 	},
 	on_attach = on_attach,
 }
