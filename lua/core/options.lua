@@ -17,6 +17,7 @@ opt.shiftwidth = 4
 opt.expandtab = true
 
 opt.colorcolumn = "128"
+opt.scrolloff = 6
 
 opt.updatetime = 250
 opt.undofile = true
