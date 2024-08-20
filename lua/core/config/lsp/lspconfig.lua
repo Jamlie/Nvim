@@ -121,6 +121,11 @@ lspconfig.angularls.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.sqlls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lspconfig.astro.setup({})
 
 return {
