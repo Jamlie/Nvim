@@ -126,6 +126,11 @@ lspconfig.sqlls.setup({
 	capabilities = capabilities,
 })
 
+-- lspconfig.denols.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
+--
 lspconfig.astro.setup({})
 
 return {

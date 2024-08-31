@@ -148,12 +148,12 @@ local plugins = {
 		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all_sync()',
 	},
-	{
-		"Jay-Madden/auto-fix-return.nvim",
-		config = function()
-			require("auto-fix-return").setup({})
-		end,
-	},
+	-- {
+	-- 	"Jay-Madden/auto-fix-return.nvim",
+	-- 	config = function()
+	-- 		require("auto-fix-return").setup({})
+	-- 	end,
+	-- },
 
 	-- change how things look
 	{
