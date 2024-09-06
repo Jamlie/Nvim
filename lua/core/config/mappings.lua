@@ -116,7 +116,7 @@ M["N"] = {
 }
 
 vim.cmd([[command! -bar -bang -nargs=? Wq w<bang> | q<bang>]])
-vim.cmd([[command! -bar -bang -nargs=? Wa w<bang> | a<bang>]])
+vim.cmd([[command! -bar -bang -nargs=? Wa wa<bang>]])
 
 M["<leader>ie"] = {
 	name = "Error Handling",
