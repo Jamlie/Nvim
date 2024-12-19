@@ -38,5 +38,6 @@ local opts = {
 }
 
 vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.format({ async = false })]])
+vim.cmd([[autocmd BufWritePre *.templ lua vim.lsp.buf.format({ async = false })]])
 
 return opts

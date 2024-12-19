@@ -19,9 +19,11 @@ require("mason-lspconfig").setup({
 	},
 })
 
-local on_attach = function(_, _)
+local on_attach = function(client, _)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 	vim.keymap.set("n", "L", vim.lsp.diagnostic.set_loclist, { silent = true })
+
+	print(client.name)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -77,6 +79,13 @@ lspconfig.pyright.setup({
 lspconfig.html.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	filetypes = { "html", "templ" },
+})
+
+lspconfig.htmx.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "html", "templ", "astro" },
 })
 
 lspconfig.cssls.setup({
@@ -87,6 +96,14 @@ lspconfig.cssls.setup({
 lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	filetypes = { "templ", "astro", "javascript", "typescript", "react", "typescriptreact", "javascriptreact", "html" },
+	settings = {
+		tailwindCSS = {
+			includeLanguages = {
+				templ = "html",
+			},
+		},
+	},
 })
 
 lspconfig.svelte.setup({
@@ -126,11 +143,22 @@ lspconfig.sqlls.setup({
 	capabilities = capabilities,
 })
 
+lspconfig.gleam.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 -- lspconfig.denols.setup({
 -- 	on_attach = on_attach,
 -- 	capabilities = capabilities,
 -- })
---
+
+-- lspconfig.volar.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+-- })
+
 lspconfig.astro.setup({})
 
 return {

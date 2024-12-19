@@ -10,6 +10,11 @@ function M.setup()
 				color = "#61afef",
 				name = "Toml",
 			},
+			tar = {
+				icon = icons.tar,
+				color = "#e5c07b",
+				name = "Tar",
+			},
 			js = {
 				icon = icons.js,
 				color = "#e5c07b",
