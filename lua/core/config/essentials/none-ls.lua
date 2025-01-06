@@ -37,6 +37,7 @@ local opts = {
 	on_attach = on_attach,
 }
 
+vim.cmd([[autocmd BufWritePre *.cpp lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.format({ async = false })]])
 vim.cmd([[autocmd BufWritePre *.templ lua vim.lsp.buf.format({ async = false })]])
 

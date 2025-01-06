@@ -16,6 +16,15 @@ local plugins = {
 			require("core.config.ui.nvim-web-devicons").setup()
 		end,
 	},
+
+	{
+		"nvim-tree/nvim-tree.lua",
+		lazy = false,
+		config = function()
+			require("nvim-tree").setup({})
+		end,
+	},
+
 	-- statusline
 	"nvim-lualine/lualine.nvim",
 
