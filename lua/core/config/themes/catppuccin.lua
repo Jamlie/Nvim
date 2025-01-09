@@ -8,11 +8,11 @@ require("catppuccin").setup({
 	},
 	-- color_overrides = {
 	-- 	macchiato = {
-	--       red = "#F7768E",
-	--       blue = "#7AA2F7",
-	--       green = "#7BED9F",
+	-- 		red = "#F7768E",
+	-- 		blue = "#7AA2F7",
+	-- 		green = "#7BED9F",
 	-- 		yellow = "#E0AF68",
-	--       mauve = "#D488FF",
+	-- 		mauve = "#D488FF",
 	-- 	},
 	-- },
 	transparent_background = true,

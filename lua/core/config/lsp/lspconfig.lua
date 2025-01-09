@@ -23,7 +23,20 @@ local on_attach = function(client, _)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 	vim.keymap.set("n", "L", vim.lsp.diagnostic.set_loclist, { silent = true })
 
-	print(client.name)
+	local active_clients = vim.lsp.get_active_clients()
+	if client.name == "denols" then
+		for _, client_ in pairs(active_clients) do
+			if client_.name == "tsserver" then
+				client_.stop()
+			end
+		end
+	elseif client.name == "tsserver" then
+		for _, client_ in pairs(active_clients) do
+			if client_.name == "denols" then
+				client.stop()
+			end
+		end
+	end
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -54,6 +67,15 @@ lspconfig.lua_ls.setup({
 lspconfig.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	root_dir = function(filename, _)
+		local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename)
+		if denoRootDir then
+			return nil
+		end
+
+		return lspconfig.util.root_pattern("package.json")(filename)
+	end,
+	single_file_support = false,
 })
 
 lspconfig.gopls.setup({
@@ -148,10 +170,24 @@ lspconfig.gleam.setup({
 	capabilities = capabilities,
 })
 
--- lspconfig.denols.setup({
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })
+lspconfig.denols.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+	init_options = {
+		lint = true,
+		unstable = true,
+		suggest = {
+			imports = {
+				hosts = {
+					["https://deno.land"] = true,
+					["https://cdn.nest.land"] = true,
+					["https://crux.land"] = true,
+				},
+			},
+		},
+	},
+})
 
 -- lspconfig.volar.setup({
 -- 	on_attach = on_attach,
