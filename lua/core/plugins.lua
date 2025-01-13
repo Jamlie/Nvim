@@ -194,7 +194,13 @@ local plugins = {
 	"rafamadriz/friendly-snippets",
 	"onsails/lspkind.nvim",
 	"L3MON4D3/LuaSnip",
-	"williamboman/mason-lspconfig.nvim",
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = false,
+		opts = {
+			auto_install = true,
+		},
+	},
 	"neovim/nvim-lspconfig",
 	"windwp/nvim-ts-autotag",
 	{ "folke/neodev.nvim", opts = {} },

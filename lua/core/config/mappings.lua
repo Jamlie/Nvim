@@ -115,8 +115,10 @@ M["N"] = {
 	{ noremap = true },
 }
 
+vim.cmd([[command! -bar -bang -nargs=? WQ w<bang> | q<bang>]])
 vim.cmd([[command! -bar -bang -nargs=? Wq w<bang> | q<bang>]])
 vim.cmd([[command! -bar -bang -nargs=? Wa wa<bang>]])
+vim.cmd([[command! -bar -bang -nargs=? W w<bang>]])
 
 M["<leader>ie"] = {
 	name = "Error Handling",
@@ -176,7 +178,7 @@ M["<leader>c"] = {
 		"Code Action",
 	},
 	t = { "<cmd>Trouble<CR>", "Trouble" },
-	f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
+	f = { "<cmd>lua vim.lsp.buf.format({ async = false })<CR>", "Format" },
 	d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostic" },
 	r = {
 		function()
