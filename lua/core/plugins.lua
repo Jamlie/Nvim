@@ -198,7 +198,7 @@ local plugins = {
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {
-			auto_install = true,
+			-- auto_install = true,
 		},
 	},
 	"neovim/nvim-lspconfig",
