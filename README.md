@@ -2,11 +2,11 @@
 
 A personal neovim configuration for `Go`, `Rust`, `JS`
 
-| Language | LSP           | Formatter                           | Debuggers                              |
-| -------- | ------------- | ----------------------------------- | -------------------------------------- |
-| Go       | gopls         | gofumpt, goimports_reviser, golines | delve (use dlv command for Powershell) |
-| JS/TS    | tsserver      | prettier                            | js-debug-adapter                       |
-| Rust     | rust_analyzer | rust_analyzer                       | codelldb                               |
+| Language | LSP             | Formatter                           | Debuggers                              |
+| -------- | --------------- | ----------------------------------- | -------------------------------------- |
+| Go       | gopls           | gofumpt, goimports_reviser, golines | delve (use dlv command for Powershell) |
+| JS/TS    | tsserver/denols | prettier/deno-fmt                   | js-debug-adapter                       |
+| Rust     | rust_analyzer   | rust_analyzer                       | codelldb                               |
 
 ## Preview
 
@@ -25,15 +25,10 @@ A personal neovim configuration for `Go`, `Rust`, `JS`
 1. [fzf](https://github.com/junegunn/fzf)
 2. [ripgrep](https://github.com/BurntSushi/ripgrep)
 3. [lazygit](https://github.com/jesseduffield/lazygit)
-4. [gofumpt](https://github.com/mvdan/gofumpt)
-5. [golines](https://github.com/segmentio/golines)
-6. [goimports-reviser](https://github.com/incu6us/goimports-reviser)
-7. [prettier](https://github.com/prettier/prettier)
-8. [Delve](https://github.com/go-delve/delve)
 
 ## Font
 
-- JetBrainsMono Nerd Font
+- Hack Nerd Font
 
 ## Installation
 
@@ -85,6 +80,7 @@ nvim
 |   \<C-k>    |           Switch to the buffer to the top            |  n   |
 |   \<C-j>    |          Switch to the buffer to the bottom          |  n   |
 |   \<C-c>    |                    Copy the file                     |  n   |
+|   \<C-n>    |                   Toggle NvimTree                    |  n   |
 |      n      | Search for the next same word (Cursor in the middle) |  n   |
 |      N      | Search for the prev same word (Cursor in the middle) |  n   |
 |      J      |                  Move the line down                  |  v   |
@@ -94,6 +90,7 @@ nvim
 | \<leader>/  |                    Toggle comment                    | n, v |
 | \<leader>x  |                     Close buffer                     |  n   |
 | \<leader>ie |                  Go Error Handling                   |  n   |
+| \<leader>th |                      Pick theme                      |  n   |
 
 ### LSP
 
@@ -105,7 +102,7 @@ nvim
 |     gi      | Go to implemetation |  n   |
 |      K      |        Hover        |  n   |
 | \<leader>ca |    Code actions     |  n   |
-| \<leader>cg |       Format        |  n   |
+| \<leader>cf |       Format        |  n   |
 | \<leader>cd |     Diagnostics     |  n   |
 | \<leader>cr |       Rename        |  n   |
 | \<leader>ct |       Trouble       |  n   |
@@ -125,10 +122,10 @@ nvim
 | \<leader>fw  |   Find word    |  n   |
 | \<leader>fb  |    Buffers     |  n   |
 | \<leader>fh  |   Old files    |  n   |
-| \<leader>th  |   Pick theme   |  n   |
 | \<leader>fgb |  Git branches  |  n   |
 | \<leader>fgc |  Git commits   |  n   |
 | \<leader>fgs |   Git status   |  n   |
+| \<leader>fgf |   Git files    |  n   |
 
 ### Harpoon
 
