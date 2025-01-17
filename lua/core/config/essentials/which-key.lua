@@ -14,26 +14,32 @@ function M.setup()
 				suggestions = 20,
 			},
 		},
-		window = {
+		win = {
+			no_overlap = true,
+			-- width = 1,
+			-- height = { min = 4, max = 25 },
+			-- col = 0,
+			-- row = math.huge,
 			border = "single",
-			position = "bottom",
-			margin = { 1, 0, 1, 0 },
-			padding = { 2, 2, 2, 2 },
+			padding = { 2, 2, 2, 2 }, -- extra window padding [top/bottom, right/left]
+			title = true,
+			title_pos = "center",
+			zindex = 1000,
+			-- Additional vim.wo and vim.bo options
+			bo = {},
+			wo = {
+				-- winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+			},
 		},
+
 		layout = {
 			height = { min = 4, max = 25 },
 			width = { min = 20, max = 50 },
 			spacing = 3,
 			align = "left",
 		},
-		ignore_missing = false,
-		hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
 		show_help = true,
-		triggers = "auto",
-		triggers_blacklist = {
-			i = { "j", "k" },
-			v = { "j", "k" },
-		},
+		triggers = { "auto" },
 		triggers_whitelist = {},
 	})
 
