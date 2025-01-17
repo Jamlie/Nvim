@@ -3,7 +3,7 @@ local o = vim.o
 local wo = vim.wo
 local g = vim.g
 local api = vim.api
-local loop = vim.loop
+local uv = vim.loop
 
 opt.termguicolors = true
 opt.relativenumber = true
@@ -38,7 +38,7 @@ api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-local this_os = loop.os_uname().sysname
+local this_os = uv.os_uname().sysname
 
 if this_os:find("Windows") then
 	opt.shell = "pwsh.exe -NoLogo"

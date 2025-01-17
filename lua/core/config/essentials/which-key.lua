@@ -38,7 +38,7 @@ function M.setup()
 	})
 
 	local keys = require("core.config.mappings")
-	wk.register(keys)
+	wk.add(keys)
 end
 
 return M
