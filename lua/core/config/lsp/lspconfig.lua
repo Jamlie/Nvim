@@ -7,7 +7,6 @@ local mason_lspconfig = require("mason-lspconfig")
 mason_lspconfig.setup({
     ensure_installed = {
         "lua_ls",
-        "tsserver",
         "gopls",
         "rust_analyzer",
         "pyright",
@@ -26,7 +25,7 @@ local on_attach = function(client, _)
                 client_.stop()
             end
         end
-    elseif client.name == "tsserver" then
+    elseif (client.name == "tsserver") or (client.name == "ts_ls") then
         for _, client_ in pairs(active_clients) do
             if client_.name == "denols" then
                 client.stop()
@@ -98,8 +97,8 @@ for _, lsp_name in ipairs(lsp_names) do
             goto continue
         end
 
-        if lsp_name == "tsserver" then
-            lspconfig.tsserver.setup({
+        if (lsp_name == "tsserver") or (lsp_name == "ts_ls") then
+            lspconfig.ts_ls.setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
                 root_dir = function(filename, _)
