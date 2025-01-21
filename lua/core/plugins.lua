@@ -49,6 +49,13 @@ local plugins = {
 		priority = 1000,
 	},
 
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+
 	-- diagnostics
 	{
 		"folke/trouble.nvim",
@@ -132,6 +139,7 @@ local plugins = {
 	-- harpoon
 	{
 		"ThePrimeagen/harpoon",
+		-- branch = "harpoon2",
 		event = "BufRead",
 	},
 
@@ -253,18 +261,18 @@ local plugins = {
 	},
 
 	-- rust
-	{
-		"mrcjkb/rustaceanvim",
-		version = "^3",
-		ft = { "rust" },
-		keys = {
-			{
-				"K",
-				"<cmd>RustLsp hover actions<cr>",
-				desc = "Rust Hover Actions",
-			},
-		},
-	},
+	-- {
+	-- 	"mrcjkb/rustaceanvim",
+	-- 	version = "^3",
+	-- 	ft = { "rust" },
+	-- 	keys = {
+	-- 		{
+	-- 			"K",
+	-- 			"<cmd>RustLsp hover actions<cr>",
+	-- 			desc = "Rust Hover Actions",
+	-- 		},
+	-- 	},
+	-- },
 
 	-- Dap
 	{

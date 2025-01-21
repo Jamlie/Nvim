@@ -40,10 +40,6 @@ local lsp_names = mason_lspconfig.get_installed_servers()
 
 for _, lsp_name in ipairs(lsp_names) do
     if lspconfig[lsp_name] then
-        if lsp_name == "rust_analyzer" then
-            goto continue
-        end
-
         if lsp_name == "tailwindcss" then
             lspconfig.tailwindcss.setup({
                 on_attach = on_attach,

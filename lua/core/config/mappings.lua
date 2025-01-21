@@ -1,3 +1,7 @@
+-- local harpoon = require("harpoon")
+-- local h = require("harpoon")
+-- harpoon:setup()
+
 vim.cmd([[command! -bar -bang -nargs=? WQ w<bang> | q<bang>]])
 vim.cmd([[command! -bar -bang -nargs=? Wq w<bang> | q<bang>]])
 vim.cmd([[command! -bar -bang -nargs=? Wa wa<bang>]])
@@ -308,15 +312,43 @@ local M = {
 		end,
 	},
 
-	{
-		leader("o"),
-		group = "Harpoon",
-		mode = "n",
-		{ leader("oh"), "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", name = "Toggle Harpoon's Menu" },
-		{ leader("oa"), "<cmd>lua require('harpoon.mark').add_file()<CR>", name = "Add File to Harpoon" },
-		{ leader("oq"), "<cmd>lua require('harpoon.ui').nav_prev()<CR>", name = "Previous Harpoon Window" },
-		{ leader("oe"), "<cmd>lua require('harpoon.ui').nav_next()<CR>", name = "Next Harpoon Window" },
-	},
+	-- {
+	-- 	leader("o"),
+	-- 	group = "Harpoon",
+	-- 	mode = "n",
+	-- 	{
+	-- 		leader("oh"),
+	-- 		function()
+	-- 			harpoon_ui.toggle_quick_menu(harpoon.list())
+	-- 		end,
+	-- 		name = "Toggle Harpoon's Menu",
+	-- 	},
+	-- 	{
+	-- 		leader("oa"),
+	-- 		function()
+	-- 			harpoon:list():add()
+	-- 		end,
+	-- 		name = "Add File to Harpoon",
+	-- 	},
+	-- 	{
+	-- 		leader("oq"),
+	-- 		function()
+	-- 			-- harpoon:list():prev()
+	-- 		end,
+	-- 		name = "Previous Harpoon Window",
+	-- 	},
+	-- 	{
+	-- 		leader("oe"),
+	-- 		function()
+	-- 			harpoon:list():next()
+	-- 		end,
+	-- 		name = "Next Harpoon Window",
+	-- 	},
+	{ leader("oh"), "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", name = "Toggle Harpoon's Menu" },
+	{ leader("oa"), "<cmd>lua require('harpoon.mark').add_file()<CR>", name = "Add File to Harpoon" },
+	{ leader("oq"), "<cmd>lua require('harpoon.ui').nav_prev()<CR>", name = "Previous Harpoon Window" },
+	{ leader("oe"), "<cmd>lua require('harpoon.ui').nav_next()<CR>", name = "Next Harpoon Window" },
+	-- },
 
 	-- paste without overwriting the current selection
 	{
@@ -380,9 +412,6 @@ vim.keymap.set(
 
 return M
 
--- -- harpoon
---
---
 -- local custom = require("custom.override")
 -- if custom.mappings then
 --     for key, mapping in pairs(custom.mappings) do
