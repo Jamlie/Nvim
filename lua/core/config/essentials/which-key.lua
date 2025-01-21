@@ -39,7 +39,9 @@ function M.setup()
 			align = "left",
 		},
 		show_help = true,
-		triggers = { "auto" },
+		triggers = {
+			{ "<auto>", mode = "nxso" },
+		},
 		triggers_whitelist = {},
 	})
 

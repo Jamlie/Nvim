@@ -18,7 +18,7 @@ local on_attach = function(client, _)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
     vim.keymap.set("n", "L", vim.lsp.diagnostic.set_loclist, { silent = true })
 
-    local active_clients = vim.lsp.get_active_clients()
+    local active_clients = vim.lsp.get_clients()
     if client.name == "denols" then
         for _, client_ in pairs(active_clients) do
             if client_.name == "tsserver" then
