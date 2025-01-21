@@ -14,24 +14,9 @@ mason_lspconfig.setup({
     },
 })
 
-local on_attach = function(client, _)
+local on_attach = function(_, _)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-    vim.keymap.set("n", "L", vim.lsp.diagnostic.set_loclist, { silent = true })
-
-    local active_clients = vim.lsp.get_clients()
-    if client.name == "denols" then
-        for _, client_ in pairs(active_clients) do
-            if client_.name == "tsserver" then
-                client_.stop()
-            end
-        end
-    elseif (client.name == "tsserver") or (client.name == "ts_ls") then
-        for _, client_ in pairs(active_clients) do
-            if client_.name == "denols" then
-                client.stop()
-            end
-        end
-    end
+    -- vim.keymap.set("n", "L", vim.lsp.diagnostic.set_loclist, { silent = true })
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
